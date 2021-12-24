@@ -62,7 +62,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
 .w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
 .w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
-.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.w3-bar .w3-bar-item{padding:8px 8px;float:left;width:auto;border:none;display:block;outline:0}
 .w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click{position:static;float:left}
 .w3-bar .w3-button{white-space:normal}
 .w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
@@ -78,6 +78,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-col.m5{width:41.66666%}.w3-col.m6,.w3-half{width:49.99999%}.w3-col.m7{width:58.33333%}.w3-col.m8,.w3-twothird{width:66.66666%}
 .w3-col.m9,.w3-threequarter{width:74.99999%}.w3-col.m10{width:83.33333%}.w3-col.m11{width:91.66666%}.w3-col.m12{width:99.99999%}}
 @media (min-width:993px){.w3-col.l1{width:8.33333%}.w3-col.l2{width:16.66666%}.w3-col.l3{width:24.99999%}.w3-col.l4{width:33.33333%}
+.w3-col.l45{width:37.499999%}
 .w3-col.l5{width:41.66666%}.w3-col.l6{width:49.99999%}.w3-col.l7{width:58.33333%}.w3-col.l8{width:66.66666%}
 .w3-col.l9{width:74.99999%}.w3-col.l10{width:83.33333%}.w3-col.l11{width:91.66666%}.w3-col.l12{width:99.99999%}}
 .w3-rest{overflow:hidden}.w3-stretch{margin-left:-16px;margin-right:-16px}
@@ -416,7 +417,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 .resume-headline{
     font-size:11px;
-    
     width:60%;
     font-weight:400;
     float:left;
@@ -469,10 +469,15 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* Other supplemental */
 
 .title-text{
-    padding-top:15px;
+    box-sizing:border-box;
+    padding:15px 5px 10px 0px;
     font-size:11px;
     font-weight:400;
-    width:35%;
+    width:160px;
+    float:left;
+    text-align:justify;
+    color:rgb(119, 119, 119);
+    background-color:rgba(255,255,255,0.8);
 }
 
 #main{
@@ -496,7 +501,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 .page-title-size{
-    font-size: 28px!important
+    font-size: 33px!important;
+    float:left;
+    padding:8px 16px;
+    font-weight:700;
 }
 
 .page-subtitle-size{
@@ -523,16 +531,32 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     -ms-transform:translate(-0%,-50%)
 }
 
+.section-title{
+    font-size:16px; 
+    font-weight:600;
+}
+
+.project-title{
+    font-size:12px;
+}
+
+.footer{
+    font-size:12px;
+    padding: 0px 0px 0px 0px;
+    margin: 60px 0px 0px 0px
+}
+
+.menu-button{
+    font-size:13px;
+    font-weight:500;
+    padding: 9px 0px;
+    text-align:left;
+}
 
 /*wrapper*/
 
 #wrapper {
-    -moz-transition: opacity 0.5s ease;
-    -webkit-transition: opacity 0.5s ease;
-    -ms-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
     position: relative;
-    z-index: 1;
     overflow: hidden;
 }
 
@@ -571,25 +595,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 	#intro {
 		color: #000000;
 		padding: 8rem 4rem 6rem 4rem;
-		-moz-align-items: left;
-		-webkit-align-items: left;
-		-ms-align-items: left;
-		align-items: left;
-
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		-moz-justify-content: -moz-flex-end;
-		-webkit-justify-content: -webkit-flex-end;
-		-ms-justify-content: -ms-flex-end;
-		justify-content: flex-end;
 		position: relative;
 		cursor: default;
 		text-align: left;
 		z-index: 1;
 		min-height: 100vh;
-        left:5%;
+        left:3%;
 	}
 	@media screen and (max-width: 980px) {
 		#intro {
@@ -612,12 +623,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 				font-size: 3.25rem;
 				line-height: 1.1;
 				margin-bottom: 1rem;
+                margin-top:3rem;
 			}
 			#intro p {
 				font-size: 1rem;
 				margin-top: 0rem;
-			}
-			#intro .actions {
-				display: none;
-			}
 	}
+
+/*Menu*/
