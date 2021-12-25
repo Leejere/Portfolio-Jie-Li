@@ -11,24 +11,30 @@
 
 <div id="wrapper">
 <!-- Navbar (sit on top) -->
+
 <div class="w3-top" style = "z-index:3">
-  <div class="w3-bar w3-white w3-card" style = "padding: 0px 8px">
-    <div class = "w3-left">
-      <a href="mailto: lijiefj@126.com" class="w3-bar-item w3-button menu-button">
-        <i class="fas fa-envelope" style="color:#777;font-size:20px"></i>
-      </a>
-      <a href="https://github.com/Leejere" class="w3-bar-item w3-button menu-button">
-        <i class="fab fa-github" style="color:#777;font-size:20px"></i>
-      </a>
+  <div>
+    <div class="w3-bar w3-white w3-card" style = "padding: 0px 8px">
+      <div class = "w3-left">
+        <div onclick = "emailBoxShow()" class="email w3-bar-item w3-button menu-button">
+          <i class="fas fa-envelope" style="color:#777;font-size:20px"></i>
+        </div>
+        
+        <a href="https://github.com/Leejere" class="w3-bar-item w3-button menu-button">
+          <i class="fab fa-github" style="color:#777;font-size:20px"></i>
+        </a>
+      </div>
+      <div class="w3-right">
+        <a href=".#Designs" class="w3-bar-item w3-button menu-button">Designs</a>
+        <a href="#Analytics" class="w3-bar-item w3-button menu-button">Analytics</a>
+        <a href="#Resume" class="w3-bar-item w3-button menu-button">Me</a>
+      </div>
     </div>
-    <div class="w3-right">
-      <a href=".#Designs" class="w3-bar-item w3-button menu-button">Designs</a>
-      <a href="#Analytics" class="w3-bar-item w3-button menu-button">Analytics</a>
-      <a href="#Resume" class="w3-bar-item w3-button menu-button">Me</a>
+    <div id = "emailBox" class='w3-card email-box'>
+      lijiefj@126.com
     </div>
   </div>
 </div>
-
 
  	<!-- Intro -->
   <div id="intro">
@@ -266,7 +272,9 @@
 <script src="js/browser.min.js"></script>
 <script src="js/breakpoints.min.js"></script>
 <script src="js/util.js"></script>
+<script scr="js/emailCollapse.js"></script>
 <script src="js/main.js"></script>
+
 <script>
   // Script to open and close sidebar
   function w3_open() {
@@ -276,6 +284,17 @@
   function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
   }
-  </script>
+</script>
+
+<script>
+  function emailBoxShow(){
+    var x = document.getElementById("emailBox");
+    if(x.style.display === "none"){
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
 
 </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

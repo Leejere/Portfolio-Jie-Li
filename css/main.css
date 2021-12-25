@@ -551,7 +551,23 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     font-weight:500;
     padding: 9px 0px;
     text-align:left;
+    background-color:#fff;
 }
+
+.email-box{
+    font-size:10px;
+    padding:5px 5px 5px 10px;
+    margin-left:0;
+    width:90px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display:none;
+    float:none;
+}
+
+.active, .email:hover {
+    background-color: #ccc;
+  }
 
 /*wrapper*/
 
