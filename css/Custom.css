@@ -246,7 +246,7 @@
     background-color:#fff;
     position:relative;
     margin:0 auto;
-    width:calc(100% - 2rem);
+    width:100%;
     max-width:72rem;
     z-index:1;
 }
