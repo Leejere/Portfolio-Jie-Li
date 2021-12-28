@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Jie Li in Urbanism</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jie Li in Urbanism</title>
   <script src="https://kit.fontawesome.com/c4c24742fe.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="../bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/Custom.css">
+
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.1002.0" data-gr-ext-installed="">
@@ -13,27 +19,24 @@
 <div id="wrapper">
 <!-- Navbar (sit on top) -->
 
-<div class="w3-top" style = "z-index:3">
+<div class="w3-bar nav-card" style = "z-index:3">
   <div>
-    <div class="w3-bar w3-white w3-card" style = "padding: 0px 8px">
+    <div style = "padding: 0px 8px">
       <div class = "w3-left">
-        <div onclick = "emailBoxShow()" class="email w3-bar-item w3-button menu-button">
-          <i class="fas fa-envelope" style="color:#777;font-size:20px"></i>
-        </div>
-        
         <a href="https://github.com/Leejere" class="w3-bar-item w3-button menu-button">
-          <i class="fab fa-github" style="color:#777;font-size:20px"></i>
+          <i class="fab fa-github" style="color:#000;font-size:20px"></i>
+        </a>
+        <a data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Email me at lijiefj@126.com" class="email w3-bar-item w3-button menu-button">
+          <i class="fas fa-envelope" style="color:#000; font-size:20px"></i>
         </a>
       </div>
       <div class="w3-right">
-        <a href="#Designs" class="w3-bar-item w3-button menu-button">Designs</a>
-        <a href="#Analytics" class="w3-bar-item w3-button menu-button">Analytics</a>
-        <a href="#Resume" class="w3-bar-item w3-button menu-button">Me</a>
+        <a href="#Designs" class="w3-bar-item w3-button menu-button">designs</a>
+        <a href="#Analytics" class="w3-bar-item w3-button menu-button">analytics</a>
+        <a href="#Resume" class="w3-bar-item w3-button menu-button">resume</a>
       </div>
     </div>
-    <div id = "emailBox" class='w3-card email-box'>
-      lijiefj@126.com
-    </div>
+
   </div>
 </div>
 
@@ -42,229 +45,347 @@
 
     <h1>
       <div>
-        <div class="page-title-size" style="padding-left:0px">
-          I'm
+        <div class="page-title">
+          <span>hi, I'm </span>
+          <span>Jie Li.</span> <br />
         </div>
-        <div class="w3-black page-title-size" style="float:left">
-          Jie Li
+        <div class="page-sub-title" style="float:left">
+          I think, draw, & code urban.
         </div>
       </div>
     </h1>
-</div>
   </div>
-<!-- main -->
-  <div id="main" style = "padding:20px 10px 10px 10px"> <!-- Make not that wide when on widest screen -->
+</div>
 
-    <!-- Horizontal line -->
+  <div id="main"> <!-- Make not that wide when on widest screen -->
+
     <!-- Designs headline -->
-        <div class="major-single-padding" id="Designs">
-          <h3 class="w3-border-bottom w3-border-light-grey section-title" style = "margin: 30px 0px 30px 0px">
-          Designs
+        <div id="Designs">
+          <h3 class="section-title">
+          designs
           </h3>
       </div>
   
       <!-- Design project Section -->
-      <div class="w3-row-padding ">
+      <div class="w3-row-padding" style="padding:2rem">
   
         <!-- first project -->
-        <div class="w3-col l3 m4 s6 w3-margin-bottom">
-          <div class="w3-display-container">
-              <div class="w3-display-topleft project-title">
-              The wedge
+        <div class="w3-col l6 m6 s12"> 
+          <div id="wedge" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="border-radius:10px; margin-top:1rem">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <a href="#">
+                  <img src="Pictures/Designs/wedge project 3.png" class="d-block w-100" alt="...">
+                </a>
               </div>
-              <img src="./Pictures/Designs/Wedge project.png" alt="House" style="width:100%">
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Pictures/Designs/wedge project 1.png" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="Pictures/Designs/wedge 4.png" class="d-block w-100" alt="...">
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#wedge" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#wedge" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+            <div class="project-title-main">
+              intergrated linear town as channel, link, & stimulator
+            </div>
+            <div class="project-title">
+              
+            </div>
+            <div class = "project-collapse">
+              <b>How effective was planning to guide urbanisation in the sprawling Beijing?</b>
+              While the built-up area is subjected to planning control, economic hot zones continued the slower and concentric profusion or followed other robust economic cores, highlighting the importance of economic basis in new town creation. 
+Based on this conclusion, and inspired by a strand of prosperous towns stretching to the northwest driven by Zhongguancun Science Park, I propose a linear new town in the northeast thhat uses multi-modal transport to attain full integration with its base (another dynamic science park), and to receive "spill-overs." Meanwhile, its elongated shape and linear transport pattern guaranteed inside density, avoiding sprawl and acting as economic stimulator to a much larger area.
           </div>
         </div>
-  
-          <!-- second project -->
-          <div class="w3-col l3 m4 s6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft project-title">
-                Gemeinschaft & Gesellschaft
-                </div>
-                <img src="./Pictures/Designs/gemeinschaft project.png" alt="House" style="width:100%">
-            </div>
-          </div>
-  
-          <!-- third project -->
-          <div class="w3-col l3 m4 s6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft project-title">
-                The bridge
-                </div>
-                <img src="./Pictures/Designs/bridge project.png" alt="House" style="width:100%">
-            </div>
-          </div>
-  
-          <!-- fourth project -->
-          <div class="w3-col l3 m4 s6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft project-title">
-                The interface
-                </div>
-                <img src="./Pictures/Designs/interface project.png" alt="House" style="width:100%">
-            </div>
-          </div>
-      </div>  
 
+        <!-- second project -->
+        <div class="w3-col l3 m6 s12" style="float:left">
+          <div id="gg" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner"  style="border-radius:10px; margin-top:1rem">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <a href="#">
+                  <img src="Pictures/Designs/gg 2.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Pictures/Designs/gg 5.png" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="Pictures/Designs/gg 4.png" class="d-block w-100" alt="...">
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#gg" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gg" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+            <div class="project-title-main">
+              factory-turned to youth apartments offering choices to various modes of shared living
+            </div>
+            <div class="project-title">
+              
+            </div>
+            <div class = "project-collapse">
+              <b>Tönnies invented the terms Gemeinschaft and Gesellschaft (community and society) to denote the pre- & post-industrial  societies. </b>
+              Gemeinschaft relates to personal relations, bonding, and responsibilities, and Gesellschaft, the modern, impersonal, and the random.
+              While Tönnies hankered for the old Gemeinschaft, we also appreciate the erratic encounters, the wide networks, and endless opportunities in the Gesellschaft. We believe people have a choice - whether to “bond” in Gemeinschaft, to “wander” in Gesellschaft, or to just be on one’s own. 
+              This concept is realised in the renovation of a textile factory. The factory used to have a grid structure: the column grid, and the roof made of replicated slopes. We use this grid, densify it, and created different modes of shared living on different floors. 
+          </div>
+        </div>
+      
+        <!-- third project -->
+        <div class="w3-col l3 m6 s12" style="float:left">
+          <div id="interface" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner"  style="border-radius:10px; margin-top:1rem">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <a href="#">
+                  <img src="Pictures/Designs/interface 3.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Pictures/Designs/interface 2.png" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="Pictures/Designs/interface 4.png" class="d-block w-100" alt="...">
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#interface" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#interface" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="project-title-main">
+            memorial galleries underneath bombed colonial governorate building
+          </div>
+            <div class="project-title">
+              
+            </div>
+            <div class = "project-collapse">
+              Sitting by the Tigris in Baghdad's core where Abbasid and Ottoman heritages are found, the bombed British governorate building was not an Iraqi native, but itself the product of colonialization. Then it was destroyed by yet another force—the 2003 war.
+The complex history resists simple architectural narrative, and I made an informed design to respect and highlight the stacking historical layers. I retain the ruin-like features of the bombed site, leaving space for reflection. The former courtyard-like structure are reconstructed underground as galleries or workshops. Thus an interface emerges between the ruined and the refined,  the light and the dark, and between implicit and explicit memorial displays.
+          </div>
+        </div>
+        <!-- fourth project -->
+        <div class="w3-col l3 m6 s12" style="float:left">
+          <div id="bridge" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner"  style="border-radius:10px; margin-top:1rem">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <a href="#">
+                  <img src="Pictures/Designs/interface 3.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Pictures/Designs/interface 2.png" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="Pictures/Designs/interface 4.png" class="d-block w-100" alt="...">
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bridge" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bridge" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="project-title-main">
+            memorial galleries underneath bombed colonial governorate building
+          </div>
+            <div class="project-title">
+              
+            </div>
+            <div class = "project-collapse">
+              Sitting by the Tigris in Baghdad's core where Abbasid and Ottoman heritages are found, the bombed British governorate building was not an Iraqi native, but itself the product of colonialization. Then it was destroyed by yet another force—the 2003 war.
+The complex history resists simple architectural narrative, and I made an informed design to respect and highlight the stacking historical layers. I retain the ruin-like features of the bombed site, leaving space for reflection. The former courtyard-like structure are reconstructed underground as galleries or workshops. Thus an interface emerges between the ruined and the refined,  the light and the dark, and between implicit and explicit memorial displays.
+          </div>
+        </div>
+      </div>  
+       
+    </div>
+
+  </div>
+
+  
+
+  <div id="main"> <!-- Make not that wide when on widest screen -->
       <!-- Analytics headline -->
-        <div class="major-single-padding" id="Analytics">
-          <h3 class="w3-border-bottom w3-border-light-grey section-title" style = "margin: 30px 0px 30px 0px">
-          Analytics
-          </h3>
+      <div id="Analytics">
+        <h3 class="section-title">
+        Analytics
+        </h3>
+    </div>
+
+    <!-- Analytics project Section -->
+    <div class="w3-row-padding">
+
+      <!-- first project -->
+      <div class="w3-col l4 m4 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+            <div class="w3-display-topleft project-title">
+            Predicting train delays
+            </div>
+            <img src="./Pictures/Designs/byStationByDayOfWeekAnimationPresent.gif" alt="House" style="width:100%">
+        </div>
       </div>
-  
-      <!-- Design project Section -->
-      <div class="w3-row-padding">
-  
-        <!-- first project -->
+
+        <!-- second project -->
         <div class="w3-col l4 m4 s6 w3-margin-bottom">
           <div class="w3-display-container">
               <div class="w3-display-topleft project-title">
-              Predicting train delays
+              Predicting crime
               </div>
-              <img src="./Pictures/Designs/byStationByDayOfWeekAnimationPresent.gif" alt="House" style="width:100%">
+              <img src="./Pictures/Designs/Crime.png" alt="House" style="width:100%">
           </div>
         </div>
-  
-          <!-- second project -->
-          <div class="w3-col l4 m4 s6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft project-title">
-                Predicting crime
-                </div>
-                <img src="./Pictures/Designs/Crime.png" alt="House" style="width:100%">
-            </div>
-          </div>
-  
-  
-          <!-- fourth project -->
-          <div class="w3-col l4 m4 s6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft project-title">
-                Rebalance ride-share
-                </div>
-                <img src="./Pictures/Designs//appAnimation.gif" alt="House" style="width:100%">
-            </div>
-          </div>
-      </div>  
 
-    <!-- About me section -->
 
+        <!-- fourth project -->
+        <div class="w3-col l4 m4 s6 w3-margin-bottom">
+          <div class="w3-display-container">
+              <div class="w3-display-topleft project-title">
+              Rebalance ride-share
+              </div>
+              <img src="./Pictures/Designs//appAnimation.gif" alt="House" style="width:100%">
+          </div>
+        </div>
+    </div>  
+  </div>
+
+  <div id="main"> <!-- Make not that wide when on widest screen -->
    <!-- about me headline -->
-   <div class="major-single-padding" id="Resume">
-    <h3 class="w3-border-bottom w3-border-light-grey section-title" style = "margin: 30px 0px 30px 0px">
+   <div id="Resume">
+    <h3 class="section-title">
     Resume
     </h3>
-</div>      
-    <div class="w3-row-padding">
-        <!-- Education -->
-        <div class="w3-col l45 m6 w3-margin-bottom" style = "padding: 0px 10px">
-        <h5 style = "font-size:13px; font-weight:600">Education</h5>
-        <div class = "resume-main resume-border">
-            <div class = "resume-time">9. 2021—<br>5. 2023</div>
-            <div class = "resume-headline">
-            Master of City Planning,
-            <br /> <i>University of Pennsylvania</i>
-            </div>
+  </div>      
+  <div class="w3-row-padding">
+      <!-- Education -->
+      <div class="w3-col l45 m6 w3-margin-bottom" style = "padding: 0px 10px">
+      <h5 style = "font-size:13px; font-weight:600">Education</h5>
+      <div class = "resume-main resume-border">
+          <div class = "resume-time">9. 2021—<br>5. 2023</div>
+          <div class = "resume-headline">
+          Master of City Planning,
+          <br /> <i>University of Pennsylvania</i>
+          </div>
 
-        </div>
-        <div class = "resume-collapse">
-            Studying planning, design, and urban analytics.
-        </div>
-        <div class = "resume-main resume-border">
-            <div class = "resume-time">9. 2016—<br>7. 2021</div>
-            <div class = "resume-headline">
-            Bachelor of Engineering in Urban Planning,
-            <br /> <i>Peking University</i>
-            </div>
-        </div>
-        <div class = "resume-collapse">
-            Studied Architecture, urban design, GIS, transportation, etc.
-        </div>
-        <div class = "resume-main resume-border">
-            <div class = "resume-time">9. 2017—<br>7. 2021</div>
-            <div class = "resume-headline">
-            Bachelor of Law in Sociology (second degree),
-            <br /> <i>Peking University</i>
-            </div>
-        </div>
-        <div class = "resume-collapse">
-            Studied sociology theories, statistics, etc.
-        </div>
-        </div>
-        <!-- Jobs -->
-        <div class="w3-col l45 m6 w3-margin-bottom" style = "padding: 0px 10px">
+      </div>
+      <div class = "resume-collapse">
+          Studying planning, design, and urban analytics.
+      </div>
+      <div class = "resume-main resume-border">
+          <div class = "resume-time">9. 2016—<br>7. 2021</div>
+          <div class = "resume-headline">
+          Bachelor of Engineering in Urban Planning,
+          <br /> <i>Peking University</i>
+          </div>
+      </div>
+      <div class = "resume-collapse">
+          Studied Architecture, urban design, GIS, transportation, etc.
+      </div>
+      <div class = "resume-main resume-border">
+          <div class = "resume-time">9. 2017—<br>7. 2021</div>
+          <div class = "resume-headline">
+          Bachelor of Law in Sociology (second degree),
+          <br /> <i>Peking University</i>
+          </div>
+      </div>
+      <div class = "resume-collapse">
+          Studied sociology theories, statistics, etc.
+      </div>
+      </div>
+      <!-- Jobs -->
+      <div class="w3-col l45 m6 w3-margin-bottom" style = "padding: 0px 10px">
 
-        <h5 style = "font-size:13px; font-weight:600">Jobs</h5>
-        <div class = "resume-main resume-border">
-            <div class = "resume-time">&nbsp;&nbsp;9. 2020—<br>10. 2020</div>
-            <div class = "resume-headline">
-            Planner (intern)
-            <br /> <i> Beijing Tsinghua Tongheng Planning & Design Institute</i>
-            </div>
+      <h5 style = "font-size:13px; font-weight:600">Jobs</h5>
+      <div class = "resume-main resume-border">
+          <div class = "resume-time">&nbsp;&nbsp;9. 2020—<br>10. 2020</div>
+          <div class = "resume-headline">
+          Planner (intern)
+          <br /> <i> Beijing Tsinghua Tongheng Planning & Design Institute</i>
+          </div>
 
-        </div>
-        <div class = "resume-collapse">
-            <b>Regulatory planning of old industrial base renovation:</b>
-            Analyzed development and declines process of the industrial base; 
-            formed report based on research.
-        </div>
-        <div class = "resume-main resume-border">
-            <div class = "resume-time">&nbsp;&nbsp;7. 2020—<br>&nbsp;&nbsp;9. 2020</div>
-            <div class = "resume-headline">
-            Planner (intern)
-            <br /> <i> Guangzhou Urban Planning & Design Survey Research Institute </i>
-            </div>
+      </div>
+      <div class = "resume-collapse">
+          <b>Regulatory planning of old industrial base renovation:</b>
+          Analyzed development and declines process of the industrial base; 
+          formed report based on research.
+      </div>
+      <div class = "resume-main resume-border">
+          <div class = "resume-time">&nbsp;&nbsp;7. 2020—<br>&nbsp;&nbsp;9. 2020</div>
+          <div class = "resume-headline">
+          Planner (intern)
+          <br /> <i> Guangzhou Urban Planning & Design Survey Research Institute </i>
+          </div>
 
-        </div>
-        <div class = "resume-collapse">
-            <b>Evaluation of heritage conservation in Guangzhou:</b>
-            Researched for heritage cases nation-wide and world-wide;
-            drafted evaluation scale. Work approved by Vice President of the department.
-        </div>
-        </div>
-        <!-- Skills -->
-        <div class="w3-col l3 m6 w3-margin-bottom" style = "padding: 0px 10px">
+      </div>
+      <div class = "resume-collapse">
+          <b>Evaluation of heritage conservation in Guangzhou:</b>
+          Researched for heritage cases nation-wide and world-wide;
+          drafted evaluation scale. Work approved by Vice President of the department.
+      </div>
+      </div>
+      <!-- Skills -->
+      <div class="w3-col l3 m6 w3-margin-bottom" style = "padding: 0px 10px">
 
-        <h5 style = "font-size:13px; font-weight:600">Skills</h5>
-        <div class = "resume-main resume-border">
-            <div class = "resume-headline">Design</div>
+      <h5 style = "font-size:13px; font-weight:600">Skills</h5>
+      <div class = "resume-main resume-border">
+          <div class = "resume-headline">Design</div>
 
-        </div>
-        <div class = "resume-collapse">
-            Design tools of drawing, 3D-modelling, rendering, and graphic/layout
-            design.
-        </div>
-        <div class = "resume-main resume-border">
-            <div class = "resume-headline" style = "width:80%">Analytics</div>
-        </div>
-        <div class = "resume-collapse">
-            Remote Sensing processing, Geographic Information System (GIS), and statistics.
-        </div>
-        <div class = "resume-main resume-border">
-            <div class = "resume-headline" style = "width:80%">Programming</div>
-        </div>
-        <div class = "resume-collapse">
-            Programming with R, Python, and SQL.
-        </div>
-        <div class = "resume-main resume-border">
-            <div class = "resume-headline">Languages</div>
-        </div>
-        <div class = "resume-collapse">
-            Fluent in English with strong writing skills; Chinese as native language.
-        </div>
-        
-        </div>
-        
-    </div>
-    <!-- Footer -->
-    <footer class="w3-border-top w3-border-light-grey footer">
+      </div>
+      <div class = "resume-collapse">
+          Design tools of drawing, 3D-modelling, rendering, and graphic/layout
+          design.
+      </div>
+      <div class = "resume-main resume-border">
+          <div class = "resume-headline" style = "width:80%">Analytics</div>
+      </div>
+      <div class = "resume-collapse">
+          Remote Sensing processing, Geographic Information System (GIS), and statistics.
+      </div>
+      <div class = "resume-main resume-border">
+          <div class = "resume-headline" style = "width:80%">Programming</div>
+      </div>
+      <div class = "resume-collapse">
+          Programming with R, Python, and SQL.
+      </div>
+      <div class = "resume-main resume-border">
+          <div class = "resume-headline">Languages</div>
+      </div>
+      <div class = "resume-collapse">
+          Fluent in English with strong writing skills; Chinese as native language.
+      </div>
+      
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-border-top w3-border-light-grey footer">
     <p></p>
-    </footer>
-
-</div>
-
+  </footer>
 <!-- Scripts -->
 <script src="js/collapse.js" defer></script>
 <script src="js/jquery.min.js"></script>
@@ -296,6 +417,14 @@
       x.style.display = "none";
     }
   }
+</script>
+
+
+<script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
 </script>
 
 </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
