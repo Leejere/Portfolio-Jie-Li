@@ -290,7 +290,7 @@ div{
 .main{
     background-color:#fff;
     position:relative;
-    width:calc(100% - 1rem);
+    width:calc(100% - 3rem);
     max-width:94rem;
     z-index:1;
     padding:20px 10px 30px 10px;
@@ -305,7 +305,7 @@ div{
 .main-black{
     background-color:#000;
     position:relative;
-    width:calc(100% - 1rem);
+    width:calc(100% - 3rem);
     max-width:94rem;
     z-index:1;
     padding:20px 10px 30px 10px;
@@ -446,6 +446,18 @@ nav .navCont ul li{
     padding-left:0.5rem;
 }
 
+.download-button{
+    font-weight:600;
+    text-align:left;
+    margin-bottom:1rem;
+    border-radius:5px;
+    padding-top:1.5rem;
+    color:#000;
+    padding-left:0.5rem;
+    margin-right:1.4rem;
+}
+
+
 @media screen and (min-width: 1000px) {
     .section-title {
       font-size: 40px;
@@ -462,6 +474,26 @@ nav .navCont ul li{
  @media screen and (max-width: 700px) {
     .section-title {
       font-size: 25px;
+
+    }
+ }
+
+ @media screen and (min-width: 1000px) {
+    .download-button {
+        margin-top:1.5rem;
+    }
+}
+  
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .download-button {
+        margin-top:1.2rem;
+    }
+}
+
+ @media screen and (max-width: 700px) {
+    .download-button {
+        margin-top:1rem;
 
     }
  }
