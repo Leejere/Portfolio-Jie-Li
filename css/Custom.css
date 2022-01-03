@@ -478,6 +478,8 @@ nav .nav-container ul li{
     border:none;
     white-space:normal;
     padding:0.5rem;
+    padding-left:0.25rem;
+    padding-right:0.25rem;
     background-color:#fff;
     font-weight:200;
     display:inline-block;
@@ -504,7 +506,7 @@ nav .nav-container ul li a {
 
  @media screen and (max-width: 700px) {
     nav .nav-container ul li {
-        font-size:16px;
+        font-size:14px;
     }
  }
 
@@ -520,6 +522,8 @@ nav .nav-container ul li a {
     border:none;
     white-space:normal;
     padding:0.5rem;
+    padding-left:0.2rem;
+    padding-right:0.2rem;
     background-color:#fff;
     font-weight:200;
     display:inline-block;
@@ -539,7 +543,7 @@ nav .nav-container ul li a {
 
  @media screen and (max-width: 700px) {
     .contact-icon {
-        font-size:16px;
+        font-size:14px;
     }
  }
 
@@ -598,7 +602,8 @@ nav .nav-container ul li a {
     min-height:70vh;
     max-height:90vh;
     object-fit: cover;
-    border-radius:8px;    
+    border-radius:8px;
+    object-position: center bottom;
 }
 
 .page-title-section{
