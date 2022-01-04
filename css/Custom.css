@@ -288,32 +288,34 @@ div{
 }
 
 .main{
+    box-sizing:border-box;
     background-color:#fff;
     position:relative;
-    width:calc(100% - 3rem);
-    max-width:94rem;
+    width:calc(100% - 6rem);
+    max-width:90rem;
     z-index:1;
     padding:20px 10px 30px 10px;
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius:10px;
+    border-st yle:solid;
+    border-radius:10px; 
     margin-left:auto;
     margin-right:auto;
-    margin-bottom:2rem;
+    margin-bottom:4rem;
     padding:0rem 2rem 2rem 2rem;
 }
 
 .main-black{
     background-color:#000;
     position:relative;
-    width:calc(100% - 3rem);
-    max-width:94rem;
+    width:100%;
     z-index:1;
     padding:20px 10px 30px 10px;
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius:10px;
+    border-rad ius:10px;
     margin-left:auto;
     margin-right:auto;
     margin-bottom:2rem;
+    margin-top:5rem;
     padding:1rem 2rem 1rem 2rem;
 }
 
@@ -332,11 +334,13 @@ div{
 
 #main3{
     background-color:#fff;
-    margin:0.5rem;
+
     box-sizing:border-box;
     padding:20px 10px 10px 10px;
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
     border-radius:10px;
+    margin:1rem;
+    margin-top:1rem;
 }
 
 .major-column{
@@ -351,11 +355,11 @@ div{
 }
 
 .page-title{
-    font-weight:600;
+    font-weight:700;
 }
 
 .page-sub-title{
-    font-weight:400;
+    font-weight:700;
     float:left;
     color:#000;
     clear:left;
@@ -363,14 +367,14 @@ div{
 
 @media screen and (min-width: 1000px) {
     .page-title {
-      font-size: 50px;
+      font-size: 40px;
       
     }
 }
 
 @media screen and (min-width: 700px) and (max-width: 1000px) {
     .page-title {
-      font-size: 40px;
+      font-size: 35px;
     }
 }
   
@@ -383,20 +387,20 @@ div{
 
 @media screen and (min-width: 1200px) {
     .page-sub-title {
-      font-size: 40px;
+      font-size: 25px;
     }
 }
   
 
 @media screen and (min-width: 700px) and (max-width: 1200px) {
     .page-sub-title {
-      font-size: 30px;
+      font-size: 20px;
     }
 }
 
  @media screen and (max-width: 700px) {
     .page-sub-title {
-      font-size: 20px;
+      font-size: 16px;
 
     }
  }
@@ -626,22 +630,21 @@ nav .nav-container ul li a {
 
 #page-head-image{
     min-height:60vh;
-    max-height:120vh;
+    max-height:110vh;
     object-fit: cover;
-    border-radius:8px;
     position:relative;
-    
+    object-position: center 80%;
 }
 
 @media screen and (min-width: 1400px) {
     #page-head-image {
-        margin-top:0rem;
+        margin-top:1.5rem;
     }
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1400px) {
     #page-head-image {
-        margin-top:2.5rem;
+        margin-top:4rem;
     }
 }
   
@@ -673,19 +676,21 @@ nav .nav-container ul li a {
 }
 
 .page-title-section{
-    position:absolute;float:left;top:6rem;right:0;
+    position:absolute;float:left;right:0;
     text-align:left;
 }
 
 @media screen and (min-width: 1200px) {
     .page-title-section {
-        left:2.5rem;
+        top:10rem;
+        left:5rem;
     }
 }
 
- @media screen and (max-width: 1444px) {
+ @media screen and (max-width: 1200px) {
     .page-title-section {
-        left:1rem;
+        left:2rem;
+        top:6rem;
 
     }
  }
@@ -881,43 +886,6 @@ nav .nav-container ul li a {
     background-color:black;
     color:white;
 }
-
-/*wrapper*/
-
-#wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-    #wrapper > .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        background-image: url("../Pictures/Big picture/overlay2.png"), linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../Pictures/Big picture/big picture long.png");
-        background-size: auto,								auto,														100% auto;
-        background-position: center,								center,														top center;
-        background-repeat: repeat,								no-repeat,													no-repeat;
-        background-attachment: scroll,								scroll,														scroll;
-        z-index: -1;
-    }
-
-        #wrapper > .bg.fixed {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-        }
-
-
-    @media screen and (orientation: portrait) {
-
-        #wrapper > .bg {
-            background-size: auto,								auto,														auto 175%;
-        }
-
-    }
 
     /* Intro */
 
