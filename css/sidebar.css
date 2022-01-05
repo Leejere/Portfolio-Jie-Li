@@ -27,8 +27,8 @@
   -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 
-  background-color: #ddd;
-  box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
+  background-color: #fff;
+  box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
 
   position: relative;
   width: 26em; }
@@ -151,20 +151,20 @@
   @media screen and (max-width: 736px) {
     #sidebar .toggle {
       text-indent: 7.25em;
-      width: 7.25em; }
+       }
       #sidebar .toggle:before {
         margin-left: -0.0625em;
         margin-top: -0.25em;
-        font-size: 1.1rem;
+        font-size: 1rem;
         z-index: 1; }
       #sidebar .toggle:after {
         background: rgba(222, 222, 222, 0.5);
         content: '';
-        height: 2.5em;
-        left: 2rem;
+        height: 1.8em;
+        left: 1.6rem;
         position: absolute;
-        top: 1.5rem;
-        width: 3em; } }
+        top: 2rem;
+        width: 2.6em; } }
 
 
 #sidebar a{
@@ -178,14 +178,17 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
   color: #000;
   font-family: "Open Sans", Helvetica, sans-serif;
-  font-size:18px;
-  font-weight: 400;
+  font-size:20px;
+  font-weight:400;
   list-style: none;
   margin-bottom: 0;
   padding: 0;
-  margin-l eft:2rem;
+  margin-left:2rem;
+  margin-top:0;
+  margin-bottom:0;
 }
   #menu ul a, #menu ul span {
     font-family:"Open Sans";
@@ -196,7 +199,16 @@
     padding: 0.2rem 0; 
   }
     #menu ul a:hover, #menu ul span:hover {
-      font-weight:600; }
+    }
+
+    .opener:hover{
+      font-weight:600;
+    }
+
+    .opener .active{
+      font-weight:600;
+    }
+
     #menu ul a.opener, #menu ul span.opener {
       -moz-transition: color 0.2s ease-in-out;
       -webkit-transition: color 0.2s ease-in-out;
@@ -214,7 +226,7 @@
         text-rendering: auto;
         line-height: 1;
         font-family: 'Font Awesome 5 Free';
-        font-weight: 900; }
+        font-weight: 700; }
       #menu ul a.opener:before, #menu ul span.opener:before {
         -moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
         -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
@@ -223,11 +235,13 @@
         color: #888;
         content: '\f078';
         position: absolute;
+        top:0.5rem;
         right: 0; }
       #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
         color: #000000; }
       #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
-        display: block; }
+        display: block;
+      }
       #menu ul a.opener.active:before, #menu ul span.opener.active:before {
         -moz-transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
@@ -235,21 +249,61 @@
         transform: rotate(-180deg); }
 
 #menu > ul > li {
-  margin: 0.25em 0 0 0;
-  padding: 0.5em 0 0 0; }
+}
   #menu > ul > li > ul {
     color: #000;
     display: none;
     margin: 0.5em 0 1.5em 0;
-    padding-left: 1em; }
+    font-weight:400;
+    color:#666;
+  }
     #menu > ul > li > ul a, #menu > ul > li > ul span {
-      font-size: 0.9em; }
+      font-size: 0.8em;
+      color:#666;
+     }
     #menu > ul > li > ul > li {
-      margin: 0.125em 0 0 0;
-      padding: 0.125em 0 0 0; }
+}
   #menu > ul > li:first-child {
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
 
+.logo{
+  font-size:25px;
+  font-family:"Open Sans", Helvetica, sans-serif;
+  font-weight:800;
+  margin-left:2rem;
+  margin-bottom:1rem;  
+}
 
+.logo-contact{
+  font-size:20px;
+  font-family:"Open Sans", Helvetica, sans-serif;
+  font-weight:600;
+  margin-left:2rem;
+  margin-bottom:1rem;  
+}
+
+.contact{
+  margin-top:7rem;
+}
+
+#menu .contact ul span{
+  font-size:14px;
+  display:inline-block;
+}
+
+#menu .contact-info{
+  margin-left:0.5rem;
+  padding-bottom:0;
+  text-decoration: underline dotted;
+}
+
+.signature{
+  font-size:14px;
+  color:#777;
+}
+
+nav ul li:hover{
+  font-weight:600
+}

@@ -183,12 +183,12 @@ div{
     float:left;
     width:30%;
     font-size:16px;
-    font-weight:4600;
+    font-weight:500;
 }
 .resume-headline{
-    font-size:15px;
+    font-size:14px;
     width:60%;
-    font-weight:300;
+    font-weight:400;
     float:left;
 }
 
@@ -291,40 +291,33 @@ div{
     box-sizing:border-box;
     background-color:#fff;
     position:relative;
-    width:calc(100% - 6rem);
+    width:calc(100% - 8rem);
     max-width:90rem;
     z-index:1;
     padding:20px 10px 30px 10px;
-    box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
-    border-st yle:solid;
+    box-shadow:2px 2px 1px 0 rgba(0,0,0,0.1),0 2px 10px 0 rgba(0,0,0,0.06);
     border-radius:10px; 
     margin-left:auto;
     margin-right:auto;
-    margin-bottom:4rem;
+    margin-bottom:3rem;
     padding:0rem 2rem 2rem 2rem;
 }
 
-.main-black{
-    background-color:#000;
+.main-embed{
+    box-sizing:border-box;
     position:relative;
     width:100%;
-    z-index:1;
-    padding:20px 10px 30px 10px;
-    box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
-    border-rad ius:10px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:2rem;
-    margin-top:5rem;
-    padding:1rem 2rem 1rem 2rem;
+    z-index:0;
+    border-radius:10px; 
+    margin-left:3rem;
+    margin-right:0;
+
 }
 
 #main2{
-    background-color:#fff;
     position:relative;
-    margin-top:2.5rem;
-    width:calc(100% - 1rem);
-    max-width:94rem;
+    margin-top:0.5rem;
+    width:calc(100% - 6rem);
     z-index:1;
     padding:0px 10px 0px 10px;
     border-radius:10px;
@@ -334,10 +327,9 @@ div{
 
 #main3{
     background-color:#fff;
-
     box-sizing:border-box;
     padding:20px 10px 10px 10px;
-    box-shadow:0 2px 2px 0 rgba(0,0,0,0.10),0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow:2px 2px 1px 0 rgba(0,0,0,0.1),0 2px 10px 0 rgba(0,0,0,0.06);
     border-radius:10px;
     margin:1rem;
     margin-top:1rem;
@@ -355,11 +347,11 @@ div{
 }
 
 .page-title{
-    font-weight:700;
+    font-weight:800;
 }
 
 .page-sub-title{
-    font-weight:700;
+    font-weight:800;
     float:left;
     color:#000;
     clear:left;
@@ -440,7 +432,7 @@ nav .navCont ul li{
 }
 
 .section-title{
-    font-weight:600;
+    font-weight:800;
     text-align:left;
     margin-top:1rem;
     margin-bottom:1rem;
@@ -449,6 +441,8 @@ nav .navCont ul li{
     color:#000;
     padding-left:0.5rem;
 }
+
+
 
 .download-button{
     font-weight:600;
@@ -464,20 +458,20 @@ nav .navCont ul li{
 
 @media screen and (min-width: 1000px) {
     .section-title {
-      font-size: 40px;
+      font-size: 30px;
     }
 }
   
 
 @media screen and (min-width: 700px) and (max-width: 1000px) {
     .section-title {
-      font-size: 30px;
+      font-size: 25px;
     }
 }
 
  @media screen and (max-width: 700px) {
     .section-title {
-      font-size: 25px;
+      font-size: 20px;
 
     }
  }
@@ -504,10 +498,9 @@ nav .navCont ul li{
 
 
 .project-title-main{
-    font-size:16px;
+    font-size:14px;
     text-align:left;
     font-weight:300;
-
     cursor:pointer;
 
 }
@@ -525,9 +518,8 @@ nav .navCont ul li{
     font-family:"Open Sans" Helvetica sans-serif;
     font-size:20px;
     text-align:left;
-    font-weight:400;
-    margin-top:1.5rem;
-    margin-bottom:1rem;;
+    font-weight:500;
+    margin-top:1rem;
     cursor:pointer;
 
 }
@@ -678,22 +670,10 @@ nav .nav-container ul li a {
 .page-title-section{
     position:absolute;float:left;right:0;
     text-align:left;
+    top:5rem;
+    left:3rem;
 }
 
-@media screen and (min-width: 1200px) {
-    .page-title-section {
-        top:10rem;
-        left:5rem;
-    }
-}
-
- @media screen and (max-width: 1200px) {
-    .page-title-section {
-        left:2rem;
-        top:6rem;
-
-    }
- }
 
 
 
@@ -875,6 +855,18 @@ nav .nav-container ul li a {
 .choice a{
     color:black;
     text-decoration:none;
+}
+
+.download-resume{
+    display:inline-block;
+    font-size:18px;
+    font-weight:400;
+    padding:0rem 0.5rem 0.2rem 0.5rem;
+    border-radius:5px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    cursor:pointer;
 }
 
 .choice:hover, .choice a:hover{
