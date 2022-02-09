@@ -668,6 +668,14 @@ nav .nav-container ul li a {
     object-position: center bottom;
 }
 
+#project-page-head-image2{
+   
+    max-height:90vh;
+    object-fit: cover;
+    border-radius:8px;
+    object-position: center bottom;
+}
+
 .page-title-section{
     position:absolute;float:left;right:0;
     text-align:left;
