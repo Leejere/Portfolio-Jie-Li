@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/Custom.css">
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <link rel="stylesheet" href="./css/sidebar.css">
-  <script src="//code.jquery.com/jquery.min.js"></script>
+  <scr ipt src="//code.jquery.com/jquery.min.js"></script>
 
 </head>
 
@@ -390,14 +390,85 @@
   </div>
           <!-- Sidebar -->
           <div id="sidebar" class="">
-            <div id = "sidebar-placeholder">
-                
-            </div>
-            <script>
-                $.get("nav.html", function(data){
-                    $("#sidebar-placeholder").replaceWith(data);
-                });
-            </script>
+            <div class="inner">
+
+                <!-- Menu -->
+                <nav id="menu">
+                            <header class="logo">
+                                <a href = "index.html">Jie Li's portfolio</a>
+                                <hr style="width:4rem; height:7px; background-color:#000; opacity:1; margin-top:1rem; margin-bottom:2rem">
+                            </header>
+                  <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li>
+                      <span class="opener">urban design</span>
+                      <ul>
+                        <li><a href="miniblocks.html">the miniblocks</a></li>
+                        <li><a href="av.html">autonomous vehicles transformation</a></li>
+                        <li><a href="wedge2.html">the wedge (design part)</a></li>
+                        
+                        <li><a href="gg.html">gemeinschaft & gesellschaft</a></li>
+                        <li><a href="interface.html">the interface</a></li>
+                        <li><a href="bridge.html">the bridge</a></li>
+                        
+                        
+                      </ul>
+                    </li>
+                    <li>
+                      <span class="opener">urban analytics</span>
+                      <ul>
+                        
+                        <li><a href="nj transit.html"><i>&ldquo;delayed early&rdquo;</i></a></li>
+                        <li><a href="citibike.html">CitiBike rebalancing</a></li>
+                        <li><a href="crime.html">crime risks</a></li>
+                        <li><a href="subsidy.html">house decor subsidy</a></li>
+                        <li><a href="wedge.html">the wedge (research part)</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span class="opener">urban research</span>
+                      <ul>
+                        <li><a href="https://epubs.utah.edu/index.php/ISUF2020/article/view/4223"><i>&ldquo;dual expansion&rdquo;</i></a></li>
+                        <li><a href="https://journals.sagepub.com/doi/10.1177/1420326X20973745">"Resocialization" in isolation</a></li>
+                      </ul>
+                    </li>
+                                <li><a href="index.html#Resume">resume</a></li>
+                  </ul>
+                            <!-- Section -->
+                            <section class="contact">
+                                <header class="logo-contact">
+                                    <hr style="width:4rem; height:7px; background-color:#000; opacity:1; margin-top:0.5rem; margin-bottom:2rem">
+                                </header>
+                                <ul>
+                                    <li>
+                                        <span class="contact-logo"><i class="fas fa-envelope" style="color:#000; font-size:16px;"></i></span>
+                                        <span class="contact-info"><a href="mailto:li.jie.urban@gmail.com">li.jie.urban@gmail.com</a></span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="contact-logo"><a href="http://www.linkedin.com/in/jielifj"><i class="fab fa-linkedin" style="color:#000; font-size:18px;"></i></a></span>
+                                        <span class="contact-info"><a href="http://www.linkedin.com/in/jielifj">Jie Li</a></span>
+                                    </li>
+                                    <li>
+                                        <span class="contact-logo"><a href="https://github.com/Leejere"><i class="fab fa-github" style="color:#000; font-size:18px;"></i></a></span>
+                                        <span class="contact-info"><a href="https://github.com/Leejere">Leejere</a></span>
+                                    </li>
+                                </ul>
+                            </section>
+          
+                            <section class="contact" style="margin-top:4rem;">
+                                
+                                <ul>
+                                    <li>
+                                       <p class="signature">Jie Li @2022</p>
+                                    </li>
+                                    
+                                </ul>
+                            </section>
+                </nav>
+          
+          
+              </div>
           </div>
 </div>
 
