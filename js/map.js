@@ -164,9 +164,9 @@ function openPopupsOnLoad(cityName, cities, map) {
 function initMapOnLoad(viewportWidth) {
   let map;
   if (viewportWidth <= 530) {
-    map = initMap(13, -170, 1, 4);
-  } else if (viewportWidth <= 1100) {
-    map = initMap(8, -170, 2, 6);
+    map = initMap(13, -135, 1, 4);
+  } else if (viewportWidth <= 1400) {
+    map = initMap(8, -130, 2, 6);
   } else {
     map = initMap(20, -135, 3, 7);
   }
@@ -188,15 +188,15 @@ function adjustMapOnViewportResize(map) {
     const currentViewportWidth = document.documentElement.clientWidth;
     if (currentViewportWidth <= 530) {
       mapContainer.style.height = '40vh';
-      map.setView([13, -175], 1);
+      map.setView([13, -135], 1);
 
-    } else if (currentViewportWidth <= 1100) {
+    } else if (currentViewportWidth <= 1400) {
       mapContainer.style.height = '70vh';
-      map.setView([8, -175], 2);
+      map.setView([8, -135], 2);
       setTimeout(() => {map.invalidateSize()}, 400);
     } else {
       mapContainer.style.height = '70vh';
-      map.setView([20, -165], 3);
+      map.setView([20, -135], 3);
     }
   });
 }

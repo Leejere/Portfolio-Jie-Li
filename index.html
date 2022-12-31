@@ -22,12 +22,9 @@
 
     <!-- Custom style sheets -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sidebar.css">
   </head>
   <body>
-    <nav class="sidebar" id="sidebar">
-
-    </nav>
-
     <main class="main" id="main">
       <section id="map" class="map">
       
@@ -40,6 +37,16 @@
       </section>
     </main>
 
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-main" id="sidebar-main">d</div>
+
+      <!-- Toggle -->
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <span class="material-symbols-outlined">
+          menu
+        </span>
+      </div>
+    </nav>
 
     <!-- Leaflet script -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
@@ -50,5 +57,6 @@
     <!-- Custom JS -->
     <script type="module" src="js/navigation.js"></script>
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/sidebar.js"></script>
 
   </body>

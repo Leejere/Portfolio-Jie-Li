@@ -1,0 +1,53 @@
+/* -------- Main and sidebar ---------- */
+
+.sidebar {
+  height: 100vh;
+  width: calc(var(--sidebar-width) + 2rem);
+  position: fixed;
+  display: flex;
+  gap: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar-hidden {
+  transform: translateX(calc(-300px + 2rem));
+}
+
+.main {
+  width: calc(100vw - var(--sidebar-width) + 2.5rem);
+  position: fixed;
+  left: calc(var(--sidebar-width) - 2.5rem);
+  background-color: aquamarine;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-full-width {
+  width: 100vw;
+  left: 0;
+}
+
+.sidebar-main {
+  width: calc(var(--sidebar-width) - 2rem);
+  height: 100%;
+  pointer-events: auto;
+}
+
+.sidebar-toggle {
+  width: 2rem;
+  pointer-events: auto;
+  cursor: pointer;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hero-reg);
+}
+
+.sidebar-toggle .material-symbols-outlined {
+  font-size: 1.6rem;
+  font-weight: 700;
+}

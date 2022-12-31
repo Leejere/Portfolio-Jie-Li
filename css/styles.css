@@ -21,7 +21,7 @@
   --column-total-height: 41rem;
   --filter-panel-height: 38.5rem;
   --map-height: 50vh;
-  --sidebar-width: clamp(20%, 20rem, 90%);
+  --sidebar-width: 300px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -68,18 +68,6 @@ button:hover {
 .regular-text {
   color: var(--text-gray);
   font-size: 0.80rem;
-}
-
-/* -------- Main and sidebar ---------- */
-
-.sidebar {
-  height: 100vh;
-  width: var(--sidebar-width);
-  position: fixed;
-}
-
-.main {
-
 }
 
 /* -------- Map ----------- */
