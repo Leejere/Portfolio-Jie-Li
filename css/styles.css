@@ -1,0 +1,123 @@
+/* --- Overall settings ---- */
+
+:root {
+  --hero-reg: #353795;
+  --hero-faded: #c8b7d9;
+  --primary-reg: #ef8872;
+  --primary-faded: #fec7ba;
+  --highlight-reg: #fdd310;
+  --text-gray: #999;
+  --light-gray: #ccc;
+  --fade-gray: #eee;
+  --nav-height: 6vh;
+  --phone-ht-reduction: 10vh; /* On phones height of main body should be reduced */
+  --main-padding: 2rem; /* padding outside of the entire page */
+  --light-border: 1px solid var(--light-gray);
+  --shadow-layer-1: 0.05rem 0.1rem 0.1rem 0.02rem rgba(0 0 0 / 20%);
+  --shadow-layer-2: 0.15rem 0.2rem 0.2rem 0.02rem rgba(0 0 0 / 20%);
+  --slider-height: 1.2rem;
+  --toggle-display-panel-height: 7.5rem;
+  --map-legend-panel-height: 3rem;
+  --column-total-height: 41rem;
+  --filter-panel-height: 38.5rem;
+  --map-height: 50vh;
+  --sidebar-width: clamp(20%, 20rem, 90%);
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    --main-padding: 2rem 1rem;
+  }
+}
+
+* {
+  font-family: "JetBrains Mono", Hack, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: var(--light-border);
+  cursor: pointer;
+  background-color: var(--fade-gray);
+  border-radius: 0.2rem;
+}
+
+button:hover {
+  background-color: var(--light-gray);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.section-title {
+  color: var(--hero-reg);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.regular-text {
+  color: var(--text-gray);
+  font-size: 0.80rem;
+}
+
+/* -------- Main and sidebar ---------- */
+
+.sidebar {
+  height: 100vh;
+  width: var(--sidebar-width);
+  position: fixed;
+}
+
+.main {
+
+}
+
+/* -------- Map ----------- */
+
+.map {
+  height: 40vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 0;
+  outline: none;
+}
+
+@media only screen and (min-width: 530px) {
+  .map {
+    height: 70vh;
+  }
+}
+
+/* ------ Popup ----------- */
+
+.leaflet-popup-content-wrapper {
+  pointer-events: none;
+  border-radius: 0.3rem;
+  z-index: 999;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+  margin: 0.5rem;
+}
+
+.leaflet-popup-content * {
+  pointer-events: auto;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  display: none;
+}
