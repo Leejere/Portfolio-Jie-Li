@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c4c24742fe.js" crossorigin="anonymous"></script>
+
     <!-- Google font icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     
@@ -27,23 +30,29 @@
   <body>
     <main class="main" id="main">
       <section id="map" class="map">
-      
+      </section>
+      <section class="map title-grid" id="title-block">
+        <div class="title-main">
+          <div class="title-name">I'm Jie Li</div>
+          <div class="title-slogan">I think, code,<br />and draw urban_</div>
+        </div>
       </section>
       <section id="gallery" class="gallery">
-        <section id="tabs-group" class="tabs-group"></section>
-        <section id="analytics-group" class="analytics-group"></section>
-        <section id="design-group" class="design-group"></section>
-        <section id="analytics-group" class="analytics-group"></section>
+        <section id="analytics-group" class="projects-group">
+          <h1 class="projects-group-title">urban analytics</h1>
+          <div class="project-blocks-group" id="analytics-blocks-group">
+          </div>
+        </section>
+        <section id="design-group" class="projects-group"></section>
+        <section id="analytics-group" class="projects-group"></section>
       </section>
     </main>
 
     <nav class="sidebar" id="sidebar">
-      <div class="sidebar-main" id="sidebar-main">d</div>
-
       <!-- Toggle -->
       <div class="sidebar-toggle" id="sidebar-toggle">
-        <span class="material-symbols-outlined">
-          menu
+        <span class="material-symbols-outlined" title="Collapse sidebar">
+          menu_open
         </span>
       </div>
     </nav>
@@ -55,7 +64,7 @@
     <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
 
     <!-- Custom JS -->
-    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/add-project-blocks.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/sidebar.js"></script>
 

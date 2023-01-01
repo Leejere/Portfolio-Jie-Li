@@ -89,7 +89,7 @@ export const cities = {
  * @param {Number} centerLng
  * @param {Number} zoomLevel
  * @param {Number} markerRadius
- * @returns map
+ * @returns map mapbox://styles/li-jie-fj/clcbeyrmt005015qsz4ikai6a
  */
 function initMap(centerLat, centerLng, zoomLevel, markerRadius) {
   const map = L.map('map', {
@@ -100,7 +100,7 @@ function initMap(centerLat, centerLng, zoomLevel, markerRadius) {
 
   // MapBox credentials
   const mapboxAccount = 'li-jie-fj';
-  const mapboxStyle = 'clc6ro61n000314qtnxfqb1sg';
+  const mapboxStyle = 'clcbf1ia0000014o7hfgx4adf';
   const mapboxToken = 'pk.eyJ1IjoibGktamllLWZqIiwiYSI6ImNsYWU2dWtqbzByZHYzb3F5dndrZm9vbXoifQ.RhKDjT-7I5oWlzeDbfrI9g';
 
   const attributionHTML = '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
@@ -164,7 +164,7 @@ function openPopupsOnLoad(cityName, cities, map) {
 function initMapOnLoad(viewportWidth) {
   let map;
   if (viewportWidth <= 530) {
-    map = initMap(13, -135, 1, 4);
+    map = initMap(13, -115, 1, 4);
   } else if (viewportWidth <= 1400) {
     map = initMap(8, -130, 2, 6);
   } else {
@@ -172,10 +172,16 @@ function initMapOnLoad(viewportWidth) {
   }
   // Add cities onto map
   map.citiesLayer.addData(cities);
-  map.citiesLayer.bindPopup(layer => makePopupContent(layer.feature)).addTo(map).openPopup();
+  map.citiesLayer.bindPopup(layer => makePopupContent(layer.feature)).addTo(map);
 
   // Open two popups on load
-  [`Philadelphia, PA`, `Yong'an, CN`].forEach(item => {
+  // On smaller screens, only show Philadelphia
+  const citiesToShow = document.documentElement.clientWidth <= 530 ?
+  [`Philadelphia, PA`] :
+  document.documentElement.clientWidth > 1400 ?
+  [`Yong'an, CN`, `Philadelphia, PA`, `Beijing, CN`] :
+  [`Yong'an, CN`, `Philadelphia, PA`];
+  citiesToShow.forEach(item => {
     openPopupsOnLoad(item, cities, map);
   });
 
@@ -188,7 +194,7 @@ function adjustMapOnViewportResize(map) {
     const currentViewportWidth = document.documentElement.clientWidth;
     if (currentViewportWidth <= 530) {
       mapContainer.style.height = '40vh';
-      map.setView([13, -135], 1);
+      map.setView([13, -115], 1);
 
     } else if (currentViewportWidth <= 1400) {
       mapContainer.style.height = '70vh';

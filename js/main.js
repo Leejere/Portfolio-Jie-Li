@@ -8,7 +8,7 @@ import { initMapOnLoad, adjustMapOnViewportResize } from "./map.js";
 const viewportWidth = document.documentElement.clientWidth;
 
 // Change map dimensions based on viewport width
-const map = initMapOnLoad(viewportWidth);
+export const map = initMapOnLoad(viewportWidth);
 adjustMapOnViewportResize(map); // Adjust map on any event-triggered changes
 
 
