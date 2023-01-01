@@ -3,10 +3,35 @@
  * but not so on smaller screens
  */
 
-import { map } from './main.js';
 import { htmlToElement } from './util-html-to-el.js';
 import { projects } from './project-list.js';
-import { createLinkButtons } from './add-project-blocks.js';
+
+/**
+ * Makes buttons: linking to more info, github, or web app
+ * @param {String} mainLink
+ * @param {String} githubLink
+ * @param {String} appLink
+ * @returns Element
+ */
+function createLinkButtons(mainLink, githubLink, appLink) {
+  const mainButton = `<button><a class="button-link" href="${mainLink}"><i class="fas fa-eye"></i> View</a></button>`;
+  let githubButton = ``;
+  let appButton = ``;
+  if (githubLink) {
+    githubButton = `<button><a class="button-link" href="${githubLink}"><i class="fab fa-github"></i> GitHub</a></button>`;
+  }
+  if (appLink) {
+    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> App</a></button>`;
+  }
+
+  return htmlToElement(`
+    <div class="project-buttons-group">
+      ${mainButton}
+      ${githubButton}
+      ${appButton}
+    </div>
+  `);
+}
 
 let isSmallScreen = false;
 const mainSection = document.querySelector('#main');
@@ -15,11 +40,6 @@ function makeMainFullWidth(mainSection) {
   if (!mainSection.classList.contains('main-full-width')) {
     mainSection.classList.add('main-full-width');
   }
-
-  // Inform map of the resize
-  setTimeout(() => {
-    map.invalidateSize();
-  }, 400);
 }
 
 function makeMainNotFullWidth(mainSection) {
@@ -205,6 +225,12 @@ const sidebarGroupTitlesEls = document.querySelectorAll('.sidebar-menu-title');
 
 for (const sidebarGroupTitle of sidebarGroupTitlesEls) {
   sidebarGroupTitle.addEventListener('click', () => {
-    closeSidebar(sidebarSection);
+    if (isSmallScreen) {
+      closeSidebar(sidebarSection);
+    }
   });
 }
+
+export {
+  createLinkButtons,
+};

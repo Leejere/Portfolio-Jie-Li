@@ -5,32 +5,7 @@ import { htmlToElement } from './util-html-to-el.js';
 const urbanAnalyticsProjects = projects.urbanTech;
 const analyticsSection = document.querySelector('#analytics-blocks-group');
 
-/**
- * Makes buttons: linking to more info, github, or web app
- * @param {String} mainLink
- * @param {String} githubLink
- * @param {String} appLink
- * @returns Element
- */
-function createLinkButtons(mainLink, githubLink, appLink) {
-  const mainButton = `<button><a class="button-link" href="${mainLink}"><i class="fas fa-eye"></i> View</a></button>`;
-  let githubButton = ``;
-  let appButton = ``;
-  if (githubLink) {
-    githubButton = `<button><a class="button-link" href="${githubLink}"><i class="fab fa-github"></i> GitHub</a></button>`;
-  }
-  if (appLink) {
-    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> App</a></button>`;
-  }
-
-  return htmlToElement(`
-    <div class="project-buttons-group">
-      ${mainButton}
-      ${githubButton}
-      ${appButton}
-    </div>
-  `);
-}
+import { createLinkButtons } from './sidebar.js';
 
 /**
  * Makes element of each project block, including defining img, title, description, and buttons
@@ -63,7 +38,3 @@ function makeProjectBlock(project) {
 for (const project of urbanAnalyticsProjects) {
   analyticsSection.append(makeProjectBlock(project));
 }
-
-export{
-  createLinkButtons,
-};
