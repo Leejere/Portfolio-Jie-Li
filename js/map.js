@@ -84,19 +84,30 @@ export const cities = {
 };
 
 /**
- * Init map given center lat and long and zoom level, called in `initMapOnLoad`
- * @param {Number} centerLat
- * @param {Number} centerLng
- * @param {Number} zoomLevel
+ * Init map base
+ * @param {Number} viewportWidth
  * @param {Number} markerRadius
  * @returns map mapbox://styles/li-jie-fj/clcbeyrmt005015qsz4ikai6a
  */
-function initMap(centerLat, centerLng, zoomLevel, markerRadius) {
+function initMapBase(viewportWidth) {
+  let zoomLevel;
+  let markerRadius;
+  if (viewportWidth <= 530) {
+    zoomLevel = 1;
+    markerRadius = 4;
+  } else if (viewportWidth <= 1400) {
+    zoomLevel = 2;
+    markerRadius = 6;
+  } else {
+    zoomLevel = 3;
+    markerRadius = 7;
+  }
+
   const map = L.map('map', {
     maxZoom: 10, preferCanvas: true,
     zoomControl: false,
     tap: false, // Prevent firing two onclick events at once
-  }).setView([centerLat, centerLng], zoomLevel);
+  }).setView([0, 0], zoomLevel);
 
   // MapBox credentials
   const mapboxAccount = 'li-jie-fj';
@@ -151,59 +162,110 @@ function openPopupsOnLoad(cityName, cities, map) {
     if (item.properties.name === cityName) {
       const content = makePopupContent(item);
       const coordinates = item.geometry.coordinates.slice().reverse();
-      L.popup({ autoClose: false }).setLatLng(coordinates).setContent(content).openOn(map);
+      L.popup({ autoClose: false })
+      .setLatLng(coordinates)
+      .setContent(content)
+      .openOn(map);
+      return;
     }
   }
 }
 
 /**
- * Calls `initMap` given viewport width, called in `main.js`
+ * Centers map on load or on resize
+ * @param {L.Map} map
+ * @param {Number} viewportWidth
+ */
+function centerMap(map, viewportWidth) {
+  if (viewportWidth <= 530) {
+    map.setView([13, -115], 1);
+  } else if (viewportWidth <= 1400) {
+    map.setView([8, -145], 2);
+  } else {
+    map.setView([30, -165], 3);
+  }
+}
+
+/**
+ * Auto opens one to three popups depending on screen size on load or resize
+ * @param {L.Map} map
+ * @param {Number} viewportWidth
+ */
+function autoOpenPopups(map, viewportWidth) {
+
+  map.closePopup();
+
+  const citiesToShow = viewportWidth <= 530 ?
+  [`Philadelphia, PA`] :
+  viewportWidth > 1400 ? [`Yong'an, CN`, `Philadelphia, PA`, `Beijing, CN`] :
+  [`Yong'an, CN`, `Philadelphia, PA`];
+
+  for (let i = 0; i < citiesToShow.length; i++) {
+    setTimeout(() => {
+      openPopupsOnLoad(citiesToShow[i], cities, map);
+    }, 50 * i);
+  }
+}
+
+/**
+ * Calls `initMapBase` given viewport width, called in `main.js`
  * @param {Number} viewportWidth
  * @returns map
  */
 function initMapOnLoad(viewportWidth) {
-  let map;
-  if (viewportWidth <= 530) {
-    map = initMap(13, -115, 1, 4);
-  } else if (viewportWidth <= 1400) {
-    map = initMap(8, -130, 2, 6);
-  } else {
-    map = initMap(20, -135, 3, 7);
-  }
+  let map = initMapBase(viewportWidth);
   // Add cities onto map
   map.citiesLayer.addData(cities);
   map.citiesLayer.bindPopup(layer => makePopupContent(layer.feature)).addTo(map);
 
-  // Open two popups on load
-  // On smaller screens, only show Philadelphia
-  const citiesToShow = document.documentElement.clientWidth <= 530 ?
-  [`Philadelphia, PA`] :
-  document.documentElement.clientWidth > 1400 ?
-  [`Yong'an, CN`, `Philadelphia, PA`, `Beijing, CN`] :
-  [`Yong'an, CN`, `Philadelphia, PA`];
-  citiesToShow.forEach(item => {
-    openPopupsOnLoad(item, cities, map);
-  });
+  // Open 1 - 3 popups on load
+  autoOpenPopups(map, viewportWidth);
+
+  // Recenter map
+  setTimeout(() => {
+    centerMap(map, viewportWidth);
+  }, 200);
 
   return map;
 }
 
+/**
+ * Listens for resize, and adjust map: recenter, reopen popups, etc., on resize
+ * @param {L.Map} map
+ */
+
+let currentTime = 0;
 function adjustMapOnViewportResize(map) {
   const mapContainer = document.querySelector('.map');
   visualViewport.addEventListener('resize', ( ) => {
-    const currentViewportWidth = document.documentElement.clientWidth;
-    if (currentViewportWidth <= 530) {
-      mapContainer.style.height = '40vh';
-      map.setView([13, -115], 1);
-
-    } else if (currentViewportWidth <= 1400) {
-      mapContainer.style.height = '70vh';
-      map.setView([8, -135], 2);
-      setTimeout(() => {map.invalidateSize()}, 400);
-    } else {
-      mapContainer.style.height = '70vh';
-      map.setView([20, -135], 3);
+    // Only do once at a time
+    if (Number(Date.now()) - currentTime < 2000) {
+      return;
     }
+    currentTime = Number(Date.now());
+    setTimeout(() => {
+      setTimeout(() => {
+        map.closePopup();
+      }, 50);
+      const currentViewportWidth = document.documentElement.clientWidth;
+      // Resize container
+      if (currentViewportWidth <= 530) {
+        mapContainer.style.height = '40vh';
+      } else if (currentViewportWidth <= 1400) {
+        mapContainer.style.height = '70vh';
+        setTimeout(() => {map.invalidateSize()}, 400);
+      } else {
+        mapContainer.style.height = '70vh';
+      }
+      // Recenter map
+      centerMap(map, currentViewportWidth);
+
+      // Reload tiles
+      map.invalidateSize();
+
+      // Reopen or close popups
+      autoOpenPopups(map, currentViewportWidth);
+    }, 1000);
   });
 }
 

@@ -139,6 +139,11 @@ const sidebarContent = htmlToElement(`
       I'm an urban planner and designer gearing into the world of urban technologists.
       I'm a coffee addict and I always want to study linguistics after urban technology.
     </div>
+    <div class="sidebar-menu">
+      <h1 class="sidebar-menu-title">
+        <a class="sidebar-menu-title" href="../">home</a>
+      </h1>
+    </div>
   </div>
 `);
 
