@@ -83,11 +83,10 @@ button:hover a {
   font-weight: 300;
 }
 
-.small-centered-text {
+.small-text {
   color: var(--text-gray);
   font-size: 0.70rem;
   font-weight: 300;
-  text-align: center;
 }
 
 iframe {
@@ -245,4 +244,25 @@ code {
   font-size: 1rem;
   font-weight: 900;
   margin-bottom: 0;
+}
+
+/* ------ Footer ---------- */
+
+footer {
+  height: 15rem;
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.76rem;
+  gap: 1rem;
+}
+
+.footer-float {
+  position: absolute;
+  top: calc(100vh - 5rem);
+  background-color: white;
+  padding-top: 2rem;
+  height: 5rem;
 }

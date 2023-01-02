@@ -1,10 +1,5 @@
 import{ projects }from './project-list.js';
-
 import { htmlToElement } from './util-html-to-el.js';
-
-const urbanAnalyticsProjects = projects.urbanTech;
-const analyticsSection = document.querySelector('#analytics-blocks-group');
-
 import { createLinkButtons } from './sidebar.js';
 
 /**
@@ -35,6 +30,13 @@ function makeProjectBlock(project) {
   return html;
 }
 
-for (const project of urbanAnalyticsProjects) {
-  analyticsSection.append(makeProjectBlock(project));
+function addProjectBlocks(sectionType, sectionId) {
+  const section = document.querySelector(`#${sectionId}`);
+  const sectionProjects = projects.filter(item => item.type === sectionType);
+
+  for (const project of sectionProjects) {
+    section.append(makeProjectBlock(project));
+  }
 }
+
+addProjectBlocks('urban technology', 'technology-blocks-group');

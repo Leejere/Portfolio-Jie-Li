@@ -41,6 +41,7 @@
   padding: 1rem;
   justify-content: flex-start;
   gap: 0.5rem;
+  padding-left: 2rem;
 }
 
 .sidebar-toggle {
@@ -65,9 +66,8 @@
   font-size: 0.75rem;
   display: flex;
   justify-self: center;
-  text-align: center;
   font-weight: 300;
-  padding: 0 1rem 1rem;
+  margin: 1.5rem 0;
 }
 
 .sidebar-menu {
@@ -75,20 +75,18 @@
   flex-direction: column;
   font-weight: 300;
   font-size: 0.8rem;
-  align-items: center;
   gap: 0.5rem;
 }
 
 .sidebar-menu-title {
   margin: 0;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--hero-reg);
-  text-decoration: none;
 }
 
 .sidebar-menu-title:hover {
   text-decoration: underline;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .sidebar-menu-item {
@@ -117,8 +115,6 @@
   gap: 0.5rem;
   position: relative;
   top: -0.25rem;
-  align-items: center;
-  padding: 0 1rem;
 }
 
 #sidebar button {

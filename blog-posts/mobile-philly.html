@@ -25,12 +25,40 @@
 
     <!-- Custom style sheets -->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+
+    <style>
+      .sidebar-toggle .material-symbols-outlined {
+        text-shadow: white 2px 2px 3px;
+      }
+    </style>
   </head>
 
   <body>
-    <main class="main" id="main" style="overflow: hidden; padding-left: 2rem;">
-      <iframe frameBorder="0" src="https://leejere.github.io/mobile-philly/" title="mobile-philly"></iframe>
+    <main class="main" id="main" title="mobile philly">
+
+      <section class="gallery main-blog">
+        <section class="title-block"></section>
+        <md-block>
+          *In **MUSA 5550** with Nick Hand, fall 2022, University of Pennsylvania.*
+
+          **For the end-product of this project, please go to [the deployed pages at this link](https://leejere.github.io/mobile-philly/), or the corresponding [GitHub repository](https://github.com/Leejere/mobile-philly).**
+
+          This project produces five blog posts about mobility and some other related topics. We used [Replica](https://studio.replicahq.com/) as a main source for mobility data, which is further introduced in the [first blog post](https://leejere.github.io/mobile-philly/blog/1-destinations/). Two other data sources are [restaurants reviews data from Yelp](), which we used to dive deeper into dining-related trips, and [Indego data](), which we used to explore more on bike travel.
+          
+          ## Navigation
+          
+          The raw data from Replica is in this [Google Drive link](https://drive.google.com/file/d/1bh51nx7r2AMikcaxt7Gt2Y4OqKca_c3T/view?usp=sharing), and the processed data is stored as ten `.csv` files under `data/cleaned-data` in [the repository](https://github.com/Leejere/mobile-philly/). The script used to process the data is in `notebooks/data-processing.py` in the same repository.
+          
+          The Yelp dataset is available in [Yelp](https://www.yelp.com/dataset/download), and the processed data is stored as `checkinpa.csv`,`philadelphiabusinessyelp.csv` and 
+          `zillow_neighborhoods.geojson` under `data/` [in this repository](https://github.com/MUSA-550-Fall-2022/final-project-mobile_philly). 
+          
+          All the other scripts for data processing, analysis, and visualizing are in either `replica-visualization.ipynb` or `yelp_bike.ipynb` under `notebooks/`. All other data used or imported is under `data/` in [the repository](https://github.com/MUSA-550-Fall-2022/final-project-mobile_philly).
+          
+        </md-block>
+        <footer></footer>
+      </section>
     </main>
 
     <nav class="sidebar" id="sidebar">
@@ -42,5 +70,8 @@
       </div>
     </nav>
 
+    <script type="module" src="../js/blog-post.js"></script>
     <script type="module" src="../js/sidebar.js"></script>
+    <!-- MD blocks -->
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
   </body>

@@ -114,7 +114,7 @@ function initMapBase(viewportWidth) {
   const mapboxStyle = 'clcbf1ia0000014o7hfgx4adf';
   const mapboxToken = 'pk.eyJ1IjoibGktamllLWZqIiwiYSI6ImNsYWU2dWtqbzByZHYzb3F5dndrZm9vbXoifQ.RhKDjT-7I5oWlzeDbfrI9g';
 
-  const attributionHTML = '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+  const attributionHTML = '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a>';
   const tileLayerUrl = `https://api.mapbox.com/styles/v1/${mapboxAccount}/${mapboxStyle}/tiles/256/{z}/{x}/{y}@2x?access_token=${mapboxToken}`;
 
   // Add tile layer

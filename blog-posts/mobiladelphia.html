@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Viewport setup for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Title -->
+    <title>Mobiladelphia</title>
+    <!-- Title icon -->
+    <link rel="icon" href="../assets/title-logo.png" type="image/icon type">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c4c24742fe.js" crossorigin="anonymous"></script>
+
+    <!-- Google font icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+
+    <!-- Custom style sheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+  </head>
+
+  <body>
+    <main class="main" id="main" title="mobiladelphia">
+
+      <section class="gallery main-blog">
+        <section class="title-block"></section>
+        <md-block>
+          ## Who is it for and what can you do with it?
+
+          Mobiladelphia is for site planners, architects, developers, city officials, or anyone with an interest for Philadelphia's mobility. In their work, they may find it useful to have these questions answered:
+          
+          - Where do people in my neighborhood go to work?
+          - When do people typically go shopping in Chinatown and from where?
+          - How do people depart from Rittenhouse Square for shopping? Do they walk most often?
+          - Do people in University City bike more for work than in North Philadelphia?
+          
+          Mobiladelphia can do two things to help answer these questions:
+          
+          1. *Filter* trips by trip attributes (departure/arrival time, mode, purpose, distance, etc.) and start/end location.
+          2. *Display* aggregated information of the filtered data both on the map and in the dashboard.
+          
+          ### Use case example
+          
+          **For example**, to answer the question of when people typically go shopping in Chinatown and from where, you can:
+          
+          - Filter: filter *destinations* to Chinatown, and filter trip purposes to only shopping.
+          - Set to display departures on the map and see where the trips come from.
+          - Look at the dashboard to see the temporal distribution of the filtered trips.
+          
+          ## What functions and modules does it have?
+          
+          As mentioned above, the app has **two** overall functions:
+          
+          1. **Filters**. The user should be able to filter trips by trip attributes and locations. The filter instructions should form a **query** and acquire data from the web-based database.
+          2. **Display**.
+             1. Map display. The app makes a choropleth map using the data acquired from the online database.
+             2. Dashboard display. The app makes a series of graphs to showcase various aspects of the selected trips.
+          
+          ## How did I set it up?
+          
+          ### Data and data processing
+          
+          [Replica](https://studio.replicahq.com/) provides *modeled* *trip-level* data **in a typical weekday** using multivarious sources:
+          
+          - Census and ACS;
+          - Travel surveys;
+          - In-auto GPS data;
+          - Data from transit agencies;
+          
+          [Here](http://help.replicahq.com/en/articles/6625924-north-atlantic-fall-2021-release-notes) Replica talks more about data sources and its methodology. I subset only trips that start and end in Philadelphia. The modeled data for Philadelphia is [regarded as trustworthy](http://help.replicahq.com/en/articles/4000393-replica-places-certainty-indicators-overview).
+          
+          I used python to pre-process the data from Replica and uploaded the data to the online database. [Here](https://github.com/MUSA-550-Fall-2022/final-project-mobile_philly/blob/main/notebooks/data-preprocessing.py) is the script I used to preprocess the data.
+          
+          ### Server and database
+          
+          <img src="../assets/projects/mobiladelphia/diagram-db-server.png" alt="database and server diagram" height="300"/>
+
+          I used [**Heroku**](https://www.heroku.com/)'s service for the backend server and a **PostgreSQL** database. **`Node.js`** is the chosen server framework. The back-end should receive filter and display instructions from the client, and make correct queries to the database, and send back the processed and aggregated data to the client.
+          
+          ### Front-end
+          
+          <img src="../assets/projects/mobiladelphia/diagram-front-end.png" alt="front-end diagram" height="300"/>
+          
+          Using JavaScript, the front end is able to record user instructions, make interactions with the backend, and display data on the map and dashboard. The display module lives in `display-map.js` and `display-dashboard.js`. The dashboard is made using [**Vega Lite API**](https://vega.github.io/vega-lite/). The filter recording module lives primarily in `filter.js`. `main.js` is where different modules cross paths and coordinate with each other.
+          
+          Go to the web app and explore!
+        </md-block>
+        <footer></footer>
+      </section>
+    </main>
+
+    <nav class="sidebar" id="sidebar">
+      <!-- Toggle -->
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <span class="material-symbols-outlined" title="Collapse sidebar">
+          menu_open
+        </span>
+      </div>
+    </nav>
+
+    <script type="module" src="../js/blog-post.js"></script>
+    <script type="module" src="../js/sidebar.js"></script>
+    <!-- MD blocks -->
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  </body>

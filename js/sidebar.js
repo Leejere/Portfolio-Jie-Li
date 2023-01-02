@@ -21,7 +21,7 @@ function createLinkButtons(mainLink, githubLink, appLink) {
     githubButton = `<button><a class="button-link" href="${githubLink}"><i class="fab fa-github"></i> GitHub</a></button>`;
   }
   if (appLink) {
-    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> App</a></button>`;
+    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> Product</a></button>`;
   }
 
   return htmlToElement(`
@@ -133,7 +133,7 @@ adjustLayoutOnLoad(threshold);
  */
 
 // Initiates sidebar content, having the initial text
-const sidebarContent = htmlToElement(`
+const initiateSidebarContent = htmlToElement(`
   <div class="sidebar-main" id="sidebar-main">
     <div class="sidebar-title">
       I'm an urban planner and designer gearing into the world of urban technologists.
@@ -150,7 +150,7 @@ const sidebarContent = htmlToElement(`
 function makeSidebarMenuCollapsible(project) {
   const sidebarProjectCollapsible = htmlToElement(`
     <div class="sidebar-menu-collapsible">
-      <div class="project-description small-centered-text">
+      <div class="project-description small-text">
         ${project.description}
       </div>
     </div>
@@ -163,19 +163,20 @@ function makeSidebarMenuCollapsible(project) {
 
 /**
  * Adds menu content on the sidebar
- * @param {String} title to be shown
+ * @param {String} category to be shown
  * @param {*} dictionary Object from `projects`
  * @returns Element
  */
-function addSidebarMenuGroup(title, dictionary) {
+function addSidebarMenuGroup(category, dictionary) {
+  const subDictionary = dictionary.filter(item => item.type === category);
   const sidebarMenuContent = htmlToElement(`
     <div class="sidebar-menu">
       <h1 class="sidebar-menu-title">
-        <a class="sidebar-menu-title" href="#analytics-group">${title}</a>
+        <a class="sidebar-menu-title" href="#analytics-group">${category}</a>
       </h1>
     </div>
   `);
-  for (const project of dictionary) {
+  for (const project of subDictionary) {
     const sidebarProjectName = htmlToElement(`
       <div class="sidebar-menu-item">
         ${project.name}
@@ -187,10 +188,10 @@ function addSidebarMenuGroup(title, dictionary) {
   }
   return sidebarMenuContent;
 }
-const sidebarMenuContent = addSidebarMenuGroup('urban technology', projects.urbanTech);
-sidebarContent.append(sidebarMenuContent);
+const sidebarMenuContent = addSidebarMenuGroup('urban technology', projects);
+initiateSidebarContent.append(sidebarMenuContent);
 
-sidebarSection.prepend(sidebarContent);
+sidebarSection.prepend(initiateSidebarContent);
 
 /**
  * Deal with collapsibles
@@ -235,6 +236,16 @@ for (const sidebarGroupTitle of sidebarGroupTitlesEls) {
     }
   });
 }
+
+/**
+ * Add footer
+ */
+
+const footer = document.querySelector('footer');
+footer.innerHTML = `
+  <span>website by Jie Li</span>
+  <span>2023</span>
+`;
 
 export {
   createLinkButtons,

@@ -1,0 +1,108 @@
+.title-img-container {
+  height: 28vh;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  outline: none;
+}
+
+.main-blog {
+  top: 28vh;
+}
+
+@media only screen and (min-width: 530px) {
+  .title-img-container {
+    height: 40vh;
+  }
+
+  .main-blog {
+    top: 40vh;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .title-img-container {
+    height: 67vh;
+  }
+
+  .main-blog {
+    top: 67vh;
+  }
+}
+
+.title-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-title {
+  color: var(--hero-reg);
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-decoration: underline;
+}
+
+.info-item {
+  font-size: 0.85rem;
+  color: var(--hero-reg);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.title-block {
+  width: clamp(70%, 60rem, 90%);
+}
+
+/* ------- Inside md-block --------- */
+
+md-block {
+  width: clamp(50%, 45rem, 90%);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-gray);
+  font-size: 0.85rem;
+}
+
+md-block p {
+  margin: 0.5rem 0;
+}
+
+md-block h2 {
+  text-align: center;
+  color: var(--hero-reg);
+  margin: 1rem 0 0.5rem;
+  font-weight: 400;
+}
+
+md-block h3 {
+  text-align: center;
+  font-weight: 400;
+  color: var(--hero-reg);
+  margin: 0.75rem 0 0.5rem;
+}
+
+md-block h4 {
+  text-align: center;
+  font-weight: 400;
+  color: var(--hero-reg);
+  margin: 0.75rem 0 0.5rem;
+}
+
+md-block img {
+  object-fit: contain;
+  margin: 0.5rem 0;
+}
+
+md-block p a {
+  color: var(--hero-reg);
+}
