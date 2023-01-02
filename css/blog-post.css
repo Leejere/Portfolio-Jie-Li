@@ -99,10 +99,26 @@ md-block h4 {
 }
 
 md-block img {
+  max-height: 400px;
   object-fit: contain;
   margin: 0.5rem 0;
 }
 
 md-block p a {
   color: var(--hero-reg);
+}
+
+md-block td img {
+  margin: 0
+}
+
+th {
+  text-align: left;
+}
+
+.table-center th {
+  text-align: center;
+}
+.table-center td {
+  text-align: center;
 }

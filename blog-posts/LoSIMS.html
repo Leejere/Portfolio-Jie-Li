@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     <!-- Title -->
-    <title>Mobile Philly</title>
+    <title>LoSIMS</title>
     <!-- Title icon -->
     <link rel="icon" href="../assets/title-logo.png" type="image/icon type">
 
@@ -37,27 +37,29 @@
   </head>
 
   <body>
-    <main class="main" id="main" title="mobile philly">
+    <main class="main" id="main" title="LoSIMS">
 
       <section class="gallery main-blog">
         <section class="title-block"></section>
         <md-block>
-          *In **MUSA 5550** with Nick Hand, fall 2022, University of Pennsylvania.*
+          LoSIMS, a local-scale stormwater infrastructure monitoring system, provides an opportunity to address street flooding with a low-cost, distributed sensor network implemented in stormwater inlets across Philadelphia.
+          
+          A simple, high-granular, and local-scale solution may alleviate many community flooding problems. For this, LoSIMS focuses on ensuring that stormwater inlets across the city are functioning well – clear of trash and other potential obstructions. Keeping stormwater inlets clear can improve stormwater management and reduce urban flash floods.
+          
+          For more details, view [this blog post](http://www.sensingthecity.com/losims/).
 
-          **For the end-product of this project, please go to [the deployed pages at this link](https://leejere.github.io/mobile-philly/), or the corresponding [GitHub repository](https://github.com/Leejere/mobile-philly).**
+          ## Presentation slideshow
+          <iframe frameBorder="0" type="application/pdf" src="../assets/projects/LoSIMS/LoSIMS-slideshow.pdf" title="LoSIMS Slides" view="fit" style="height: 450px"></iframe>
+          
+          
+          ## Prototyping with Arduino
+          <iframe frameBorder="0" src="https://www.youtube.com/embed/BHTyi4g0u58" style="height: 450px"></iframe>
 
-          This project produces five blog posts about mobility and some other related topics. We used [Replica](https://studio.replicahq.com/) as a main source for mobility data, which is further introduced in the [first blog post](https://leejere.github.io/mobile-philly/blog/1-destinations/). Two other data sources are [restaurants reviews data from Yelp](), which we used to dive deeper into dining-related trips, and [Indego data](), which we used to explore more on bike travel.
-          
-          ## Navigation
-          
-          The raw data from Replica is in this [Google Drive link](https://drive.google.com/file/d/1bh51nx7r2AMikcaxt7Gt2Y4OqKca_c3T/view?usp=sharing), and the processed data is stored as ten `.csv` files under `data/cleaned-data` in [the repository](https://github.com/Leejere/mobile-philly/). The script used to process the data is in `notebooks/data-processing.py` in the same repository.
-          
-          The Yelp dataset is available in [Yelp](https://www.yelp.com/dataset/download), and the processed data is stored as `checkinpa.csv`,`philadelphiabusinessyelp.csv` and 
-          `zillow_neighborhoods.geojson` under `data/` [in this repository](https://github.com/MUSA-550-Fall-2022/final-project-mobile_philly). 
-          
-          All the other scripts for data processing, analysis, and visualizing are in either `replica-visualization.ipynb` or `yelp_bike.ipynb` under `notebooks/`. All other data used or imported is under `data/` in [the repository](https://github.com/MUSA-550-Fall-2022/final-project-mobile_philly).
-          
+          ## Arduino dashboard
+          <iframe frameBorder="0" src="https://www.youtube.com/embed/6DEeQy6WgIs" style="height: 450px"></iframe>
+
         </md-block>
+        
         <footer></footer>
       </section>
     </main>

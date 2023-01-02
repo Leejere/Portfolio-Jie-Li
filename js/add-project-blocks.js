@@ -15,9 +15,17 @@ function makeProjectBlock(project) {
   const githubLink = project.githubLink;
   const appLink = project.appLink;
 
+  let titleImageHtml;
+
+  if (titleImageLink) {
+    titleImageHtml = `<img class="project-thumbnail" alt="${name} main page" src="${titleImageLink}">`;
+  } else {
+    titleImageHtml = ``;
+  }
+
   const html = htmlToElement(`
     <div class="project-block">
-      <img class="project-thumbnail" alt="${name} main page" src="${titleImageLink}">
+      ${titleImageHtml}
       <h2 class="section-title project-title">
         <a class=project-title href="${mainLink}" alt="${name} main page">${name}</a>
       </h2>
@@ -40,3 +48,4 @@ function addProjectBlocks(sectionType, sectionId) {
 }
 
 addProjectBlocks('urban technology', 'technology-blocks-group');
+addProjectBlocks('planning & design', 'design-blocks-group');

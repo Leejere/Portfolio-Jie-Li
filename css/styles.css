@@ -90,6 +90,10 @@ button:hover a {
 }
 
 iframe {
+  margin-bottom: 2rem;
+}
+
+.iframe-full {
   width: 100%;
   height: 100%;
 }

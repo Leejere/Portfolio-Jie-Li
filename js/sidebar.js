@@ -188,8 +188,11 @@ function addSidebarMenuGroup(category, dictionary) {
   }
   return sidebarMenuContent;
 }
-const sidebarMenuContent = addSidebarMenuGroup('urban technology', projects);
-initiateSidebarContent.append(sidebarMenuContent);
+const techMenuContent = addSidebarMenuGroup('urban technology', projects);
+initiateSidebarContent.append(techMenuContent);
+
+const designMenuContent = addSidebarMenuGroup('planning & design', projects);
+initiateSidebarContent.append(designMenuContent);
 
 sidebarSection.prepend(initiateSidebarContent);
 
