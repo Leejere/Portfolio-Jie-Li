@@ -1,0 +1,273 @@
+/* --- Overall settings ---- */
+
+:root {
+  --hero-reg: #353795;
+  --hero-faded: #c8b7d9;
+  --primary-reg: #ef8872;
+  --primary-faded: #fec7ba;
+  --highlight-reg: #fdd310;
+  --text-gray: #888;
+  --light-gray: #ccc;
+  --fade-gray: #eee;
+  --phone-ht-reduction: 10vh; /* On phones height of main body should be reduced */
+  --main-padding: 2rem; /* padding outside of the entire page */
+  --light-border: 1px solid var(--hero-reg);
+  --shadow-layer-1: 0.05rem 0.1rem 0.1rem 0.02rem rgba(0 0 0 / 20%);
+  --shadow-layer-2: 0.25rem 0.3rem 0.5rem 0.1rem rgba(0 0 0 / 10%);
+  --slider-height: 1.2rem;
+  --map-height: 50vh;
+  --sidebar-width: 300px;
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    --main-padding: 2rem 1rem;
+  }
+}
+
+* {
+  font-family: "JetBrains Mono", Hack, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: var(--light-border);
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0.2rem;
+  color: var(--hero-reg);
+  font-size: 0.75rem;
+}
+
+button a {
+  color: var(--hero-reg);
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: var(--hero-reg);
+  color: white;
+}
+
+button:hover a {
+  background-color: var(--hero-reg);
+  color: white;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.section-title {
+  color: var(--hero-reg);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.regular-text {
+  color: var(--text-gray);
+  font-size: 0.80rem;
+  font-weight: 300;
+}
+
+.small-text {
+  color: var(--text-gray);
+  font-size: 0.70rem;
+  font-weight: 300;
+}
+
+iframe {
+  margin-bottom: 2rem;
+}
+
+.iframe-full {
+  width: 100%;
+  height: 100%;
+}
+
+code {
+  background-color: #eee;
+  color: #444;
+  padding: 0 0.3rem;
+}
+
+/* -------- Map ----------- */
+
+.map {
+  height: 40vh;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  outline: none;
+}
+
+.gallery {
+  position: relative;
+  padding-left: 0.5rem;
+  display: flex;
+  top: 40vh;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media only screen and (min-width: 530px) {
+  .map {
+    height: 70vh;
+  }
+
+  .gallery {
+    top: 70vh;
+  }
+}
+
+/* ------ Popup ----------- */
+
+.leaflet-popup-content-wrapper {
+  pointer-events: none;
+  border-radius: 0.3rem;
+  z-index: 999;
+  max-width: 250px;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+  margin: 0.5rem;
+}
+
+.leaflet-popup-content * {
+  pointer-events: auto;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  display: none;
+}
+
+/* ------------- Title block -------------- */
+
+.title-grid {
+  display: grid;
+  grid-template: 2fr 1fr 1fr / 2fr 2fr 1fr;
+  pointer-events: none;
+}
+
+.title-main {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--hero-reg);
+  pointer-events: none;
+}
+
+.title-name {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 530px) {
+  .title-name {
+    font-size: 1.2rem;
+  }
+  
+  .title-slogan {
+    font-size: 0.85rem;
+  }
+}
+
+/* ------------ inside gallery ------------ */
+
+.projects-group {
+  width: clamp(70%, 60rem, 90%);
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-group-title {
+  color: var(--hero-reg);
+  font-weight: 800;
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+
+.project-blocks-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project-block {
+  width: 100%;
+  padding: 0 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.project-thumbnail {
+  border-radius: 1rem;
+  border: 1px solid var(--hero-faded);
+}
+
+/* Responsive block width */
+
+@media only screen and (min-width: 530px) {
+  .project-block {
+    width: calc((100% - 2rem) / 2);
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .project-block {
+    width: calc((100% - 4rem) / 3);
+  }
+}
+
+.project-title {
+  color: var(--hero-reg);
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+/* ------ Footer ---------- */
+
+footer {
+  height: 15rem;
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.76rem;
+  gap: 1rem;
+}
+
+.footer-float {
+  position: absolute;
+  top: calc(100vh - 5rem);
+  background-color: white;
+  padding-top: 2rem;
+  height: 5rem;
+}

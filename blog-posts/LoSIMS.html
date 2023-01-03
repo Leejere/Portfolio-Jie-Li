@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Viewport setup for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Title -->
+    <title>LoSIMS</title>
+    <!-- Title icon -->
+    <link rel="icon" href="../assets/title-logo.png" type="image/icon type">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c4c24742fe.js" crossorigin="anonymous"></script>
+
+    <!-- Google font icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+
+    <!-- Custom style sheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+
+    <!-- Make toggle have white shadow -->
+    <style>
+      .sidebar-toggle .material-symbols-outlined {
+        text-shadow: white 2px 2px 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="main" id="main" title="LoSIMS">
+
+      <section class="gallery main-blog">
+        <section class="title-block"></section>
+        <md-block>
+          LoSIMS, a local-scale stormwater infrastructure monitoring system, provides an opportunity to address street flooding with a low-cost, distributed sensor network implemented in stormwater inlets across Philadelphia.
+          
+          A simple, high-granular, and local-scale solution may alleviate many community flooding problems. For this, LoSIMS focuses on ensuring that stormwater inlets across the city are functioning well – clear of trash and other potential obstructions. Keeping stormwater inlets clear can improve stormwater management and reduce urban flash floods.
+          
+          For more details, view [this blog post](http://www.sensingthecity.com/losims/).
+
+          ## Presentation slideshow
+          <iframe frameBorder="0" type="application/pdf" src="../assets/projects/LoSIMS/LoSIMS-slideshow.pdf" title="LoSIMS Slides" view="fit" style="height: 400px"></iframe>
+          
+          
+          ## Prototyping with Arduino
+          <iframe frameBorder="0" src="https://www.youtube.com/embed/BHTyi4g0u58" style="height: 400px"></iframe>
+
+          ## Arduino dashboard
+          <iframe frameBorder="0" src="https://www.youtube.com/embed/6DEeQy6WgIs" style="height: 400px"></iframe>
+
+        </md-block>
+        
+        <footer></footer>
+      </section>
+    </main>
+
+    <nav class="sidebar" id="sidebar">
+      <!-- Toggle -->
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <span class="material-symbols-outlined" title="Collapse sidebar">
+          menu_open
+        </span>
+      </div>
+    </nav>
+
+    <script type="module" src="../js/blog-post.js"></script>
+    <script type="module" src="../js/sidebar.js"></script>
+    <!-- MD blocks -->
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  </body>
