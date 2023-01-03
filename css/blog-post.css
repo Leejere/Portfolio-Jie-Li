@@ -99,7 +99,6 @@ md-block h4 {
 }
 
 md-block img {
-  max-height: 400px;
   object-fit: contain;
   margin: 0.5rem 0;
 }

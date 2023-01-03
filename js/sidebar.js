@@ -167,12 +167,12 @@ function makeSidebarMenuCollapsible(project) {
  * @param {*} dictionary Object from `projects`
  * @returns Element
  */
-function addSidebarMenuGroup(category, dictionary) {
+function addSidebarMenuGroup(category, dictionary, hrefId) {
   const subDictionary = dictionary.filter(item => item.type === category);
   const sidebarMenuContent = htmlToElement(`
     <div class="sidebar-menu">
       <h1 class="sidebar-menu-title">
-        <a class="sidebar-menu-title" href="#analytics-group">${category}</a>
+        <a class="sidebar-menu-title" href="../index.html#${hrefId}">${category}</a>
       </h1>
     </div>
   `);
@@ -188,10 +188,10 @@ function addSidebarMenuGroup(category, dictionary) {
   }
   return sidebarMenuContent;
 }
-const techMenuContent = addSidebarMenuGroup('urban technology', projects);
+const techMenuContent = addSidebarMenuGroup('urban technology', projects, 'technology-group');
 initiateSidebarContent.append(techMenuContent);
 
-const designMenuContent = addSidebarMenuGroup('planning & design', projects);
+const designMenuContent = addSidebarMenuGroup('planning & design', projects, 'design-group');
 initiateSidebarContent.append(designMenuContent);
 
 sidebarSection.prepend(initiateSidebarContent);

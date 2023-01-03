@@ -205,7 +205,8 @@ code {
 
 .projects-group-title {
   color: var(--hero-reg);
-  font-weight: 300;
+  font-weight: 800;
+  text-decoration: underline;
   font-size: 1.4rem;
 }
 
