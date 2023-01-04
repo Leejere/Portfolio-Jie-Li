@@ -206,6 +206,16 @@ const aboutMeContent = htmlToElement(`
 `);
 sidebarContent.append(aboutMeContent);
 
+// Add contacts
+const contactsContent = htmlToElement(`
+  <div class="contacts-group">
+    <button><a class="button-link" href="https://github.com/Leejere"><i class="fab fa-github"></i> GitHub</a></button>
+    <button><a class="button-link" href="https://www.linkedin.com/in/jielifj/"><i class="fab fa-linkedin"></i> LinkedIn</a></button>
+    <button><a class="button-link" href="mailto: li.jie.urban@gmail.com"><i class="fas fa-envelope"></i> li.jie.urban@gmail.com</a></button>
+  </div>
+`);
+sidebarContent.append(contactsContent);
+
 sidebarSection.prepend(sidebarContent);
 
 /**
