@@ -99,4 +99,14 @@ export const projects = [
     titleImageLink: `../assets/thumbnails/miniblocks.png`,
     mainLink: `../blog-posts/miniblocks.html`,
   },
+  {
+    type: 'planning & design',
+    name: 'autonomous Navy Yard',
+    description: `Designing for Navy Yard which is pioneering in adapting for the age of autonomous vehicles (public AV fleets). Focused on the gateway and office building concepts`,
+    year: 2021,
+    by: 'Jie Li (in team of eight)',
+    role: 'Individual for work shown here',
+    titleImageLink: `../assets/thumbnails/autonomous-navy-yard.png`,
+    mainLink: `../blog-posts/autonomous-navy-yard.html`,
+  },
 ];
