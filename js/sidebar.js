@@ -269,7 +269,7 @@ for (const sidebarGroupTitle of sidebarGroupTitlesEls) {
 const footer = document.querySelector('footer');
 footer.innerHTML = `
   <span>website by Jie Li</span>
-  <span>Philadelphia, 2023</span>
+  <span>@Philadelphia, 2023</span>
 `;
 
 export {
