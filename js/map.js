@@ -104,7 +104,7 @@ function initMapBase(viewportWidth) {
   }
 
   const map = L.map('map', {
-    maxZoom: 10, preferCanvas: true,
+    maxZoom: 15, preferCanvas: true,
     zoomControl: false,
     tap: false, // Prevent firing two onclick events at once
   }).setView([0, 0], zoomLevel);
@@ -119,7 +119,7 @@ function initMapBase(viewportWidth) {
 
   // Add tile layer
   L.tileLayer(tileLayerUrl, {
-      maxZoom: 10,
+      maxZoom: 15,
       attribution: attributionHTML,
   }).addTo(map);
 

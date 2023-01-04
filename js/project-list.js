@@ -89,4 +89,14 @@ export const projects = [
     titleImageLink: `../assets/thumbnails/mantua.png`,
     mainLink: `../blog-posts/stabilizing-mantua.html`,
   },
+  {
+    type: 'planning & design',
+    name: 'miniblocks',
+    description: `Site planning for a neighborhood in Grays Ferry, Philadelphia. Used finer gridding to create a more active community`,
+    year: 2021,
+    by: 'Jie Li, Yan Wang',
+    role: 'Design and diagramming',
+    titleImageLink: `../assets/thumbnails/miniblocks.png`,
+    mainLink: `../blog-posts/miniblocks.html`,
+  },
 ];

@@ -81,6 +81,7 @@
 .sidebar-menu-title {
   margin: 0;
   font-weight: 600;
+  font-size: 1rem;
   color: var(--hero-reg);
 }
 
@@ -94,19 +95,19 @@
   color: var(--hero-reg);
   text-decoration: none;
   cursor: pointer;
-  font-size: 0.9rem;  
+  font-size: 0.8rem;  
 }
 
 .sidebar-menu-item:hover {
   text-decoration: underline;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .sidebar-menu-item-selected {
   text-decoration: underline;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .sidebar-menu-collapsible {
