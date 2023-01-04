@@ -10,6 +10,10 @@
   top: 28vh;
 }
 
+.resume-blog {
+  top: 5vh;
+}
+
 @media only screen and (min-width: 530px) {
   .title-img-container {
     height: 40vh;
@@ -120,4 +124,21 @@ th {
 }
 .table-center td {
   text-align: center;
+}
+
+/* ------- Resume -------- */
+
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0 0.3rem;
+  color: var(--hero-reg);
+}
+
+.resume-item-title {
+  font-weight: 600;
+}
+
+md-block ul {
+  margin: 0;
 }

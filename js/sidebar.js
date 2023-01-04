@@ -14,14 +14,14 @@ import { projects } from './project-list.js';
  * @returns Element
  */
 function createLinkButtons(mainLink, githubLink, appLink) {
-  const mainButton = `<button><a class="button-link" href="${mainLink}"><i class="fas fa-eye"></i> View</a></button>`;
+  const mainButton = `<button><a class="button-link" href="${mainLink}"><i class="fas fa-eye"></i> view</a></button>`;
   let githubButton = ``;
   let appButton = ``;
   if (githubLink) {
     githubButton = `<button><a class="button-link" href="${githubLink}"><i class="fab fa-github"></i> GitHub</a></button>`;
   }
   if (appLink) {
-    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> Product</a></button>`;
+    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> product</a></button>`;
   }
 
   return htmlToElement(`
@@ -133,7 +133,7 @@ adjustLayoutOnLoad(threshold);
  */
 
 // Initiates sidebar content, having the initial text
-const initiateSidebarContent = htmlToElement(`
+const sidebarContent = htmlToElement(`
   <div class="sidebar-main" id="sidebar-main">
     <div class="sidebar-title">
       I'm an urban planner and designer gearing into the world of urban technologists.
@@ -188,13 +188,25 @@ function addSidebarMenuGroup(category, dictionary, hrefId) {
   }
   return sidebarMenuContent;
 }
+
+// Add content of projects in the two categories
 const techMenuContent = addSidebarMenuGroup('urban technology', projects, 'technology-group');
-initiateSidebarContent.append(techMenuContent);
+sidebarContent.append(techMenuContent);
 
 const designMenuContent = addSidebarMenuGroup('planning & design', projects, 'design-group');
-initiateSidebarContent.append(designMenuContent);
+sidebarContent.append(designMenuContent);
 
-sidebarSection.prepend(initiateSidebarContent);
+// Add 'about me'
+const aboutMeContent = htmlToElement(`
+  <div class="sidebar-menu">
+    <h1 class="sidebar-menu-title">
+      <a class="sidebar-menu-title" href="../blog-posts/resume.html">about me</a>
+    </h1>
+  </div>
+`);
+sidebarContent.append(aboutMeContent);
+
+sidebarSection.prepend(sidebarContent);
 
 /**
  * Deal with collapsibles
@@ -247,7 +259,7 @@ for (const sidebarGroupTitle of sidebarGroupTitlesEls) {
 const footer = document.querySelector('footer');
 footer.innerHTML = `
   <span>website by Jie Li</span>
-  <span>2023</span>
+  <span>Philadelphia, 2023</span>
 `;
 
 export {

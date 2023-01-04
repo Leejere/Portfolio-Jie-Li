@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Viewport setup for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Title -->
+    <title>Jie's resume</title>
+    <!-- Title icon -->
+    <link rel="icon" href="../assets/title-logo.png" type="image/icon type">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c4c24742fe.js" crossorigin="anonymous"></script>
+
+    <!-- Google font icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+
+    <!-- Custom style sheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+  </head>
+
+  <body>
+    <main class="main" id="main" title="other design drawings">
+      <section class="gallery resume-blog">
+        <section class="title-block">
+          <h1 class="blog-title">resume</h1>
+
+          <div class="project-buttons-group">
+            <button><a class="button-link" href="../assets/resume.pdf"><i class="fas fa-file-pdf"></i> PDF</a></button>
+            <button><a class="button-link" href="https://github.com/Leejere"><i class="fab fa-github"></i> GitHub</a></button>
+            <button><a class="button-link" href="https://www.linkedin.com/in/jielifj/"><i class="fab fa-linkedin"></i> LinkedIn</a></button>
+            <button><a class="button-link" href="mailto: li.jie.urban@gmail.com"><i class="fas fa-envelope"></i> li.jie.urban@gmail.com</a></button>
+
+          </div>
+        </section>
+        
+        <md-block>
+          ## Education
+
+          <div class="resume-item">
+            <div class="resume-item-title">Master of City Planning, University of Pennsylvania</div>
+            <div class="resume-item-time">2021/09—2023/05</div>
+          </div>
+
+          - City planning, urban design, & urban analytics
+
+          <div class="resume-item">
+            <div class="resume-item-title">Bachelor’s in Urban Planning, Peking University</div>
+            <div class="resume-item-time">2016/09—2021/07</div>
+          </div>
+
+          - Architectural/Urban design; city planning; GIS & data analysis; quantitative planning; transportation modeling & planning; infrastructure planning
+
+          ## Previous employment
+
+          <div class="resume-item">
+            <div class="resume-item-title">Urban Analytics Intern, AECOM (Arlington, VA)</div>
+            <div class="resume-item-time">2022/09—Present</div>
+          </div>
+
+          - **Data analytics**: Produced a household typology study for Hartford, CT combining various clustering settings and planning knowledge. Wrote a report on 12 household types and their demographic characteristics and made interactive maps and charts
+          - **Web development and data-oriented planning tool building**: Made web-apps for three cities’ fee calculation using JavaScript. In addition, took over previous co-worker’s scenario planning tool in R and Python and produced detailed documentation
+
+
+          <div class="resume-item">
+            <div class="resume-item-title">Urban Plan/Design Intern, AECOM (Dallas, TX)</div>
+            <div class="resume-item-time">2022/05—2022/08</div>
+          </div>
+
+          - **Procedural design**: Learned to work with CityEngine within 1 week and modeled two density scenarios, OH; in this way, produced high-quality scenario infographics at fast pace.
+          -	**Active transportation**: Designed & modeled complete-street intersections for Austin’s downtown transportation project.
+          -	**Visualization & branding**: Created clear and visually appealing maps for different projects – e.g., tourism-oriented artistic “experience maps” for hunting reserves in KSA; maps to clearly communicate complex information for Austin’s downtown transportation project; visually appealing publication to advocate for higher density for Columbus, OH.
+          
+          ## Skillset
+
+
+          <div class="resume-item">
+            <div class="resume-item-title">Planning & design</div>
+          </div>
+          -	GIS and design software, e.g., AutoCAD, SketchUp, Rhino, Adobe Creative Suite
+
+          <div class="resume-item">
+            <div class="resume-item-title">Analytics</div>
+          </div>
+          -	Analytics with R, Python, SQL, & Excel.
+          -	Data visualization, interpretation, & reporting with R Markdown & web.
+          
+          <div class="resume-item">
+            <div class="resume-item-title">Web development</div>
+          </div>
+          -	Front-end development with HTML, CSS, and JavaScript; Node.js and database
+          
+          <div class="resume-item">
+            <div class="resume-item-title">Visualization & branding</div>
+          </div>
+          -	Making graphically attractive story-telling infographics & branding material
+
+        </md-block>
+        <footer></footer>
+      </section>
+    </main>
+
+    <nav class="sidebar" id="sidebar">
+      <!-- Toggle -->
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <span class="material-symbols-outlined" title="Collapse sidebar">
+          menu_open
+        </span>
+      </div>
+    </nav>
+
+    <script type="module" src="../js/sidebar.js"></script>
+    <!-- MD blocks -->
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  </body>
