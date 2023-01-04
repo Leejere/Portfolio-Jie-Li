@@ -109,4 +109,14 @@ export const projects = [
     titleImageLink: `../assets/thumbnails/autonomous-navy-yard.png`,
     mainLink: `../blog-posts/autonomous-navy-yard.html`,
   },
+  {
+    type: 'planning & design',
+    name: 'other design drawings',
+    description: `Urban design drawings from previous projects earlier than 2021`,
+    year: `2020 or earlier`,
+    by: 'Jie Li',
+    role: 'Individual',
+    titleImageLink: `../assets/thumbnails/other-design-drawings.png`,
+    mainLink: `../blog-posts/other-design-drawings.html`,
+  },
 ];
