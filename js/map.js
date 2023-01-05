@@ -96,12 +96,12 @@ function initMapBase(viewportWidth) {
   // Setting max bounds
   const bottomLeftCorner = L.latLng(-70, 60 - 360);
   const topRightCorner = L.latLng(80, -50);
-
   const maxBounds = L.latLngBounds(
     bottomLeftCorner,
     topRightCorner,
   );
 
+  // Setting zoom level and marker radius
   if (viewportWidth <= 530) {
     zoomLevel = 1;
     markerRadius = 4;
