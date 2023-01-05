@@ -31,7 +31,6 @@ function makeTitleImage(projectName) {
 function makeTitleBlock(projectName) {
   // Info for this project
   const thisProject = (projects.filter(item => item.name === projectName))[0];
-  console.log(thisProject);
   const titleBlockHtml = htmlToElement(`
     <div class="title-block">
       <h1 class="blog-title">${projectName}</h1>

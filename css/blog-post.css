@@ -77,6 +77,14 @@ md-block {
   font-size: 0.85rem;
 }
 
+.md-block {
+  width: clamp(50%, 45rem, 90%);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-gray);
+  font-size: 0.85rem;
+}
+
 md-block p {
   margin: 0.5rem 0;
 }
@@ -141,4 +149,58 @@ th {
 
 md-block ul {
   margin: 0;
+}
+
+/* ------- Slide pics ---------- */
+
+.slide-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--hero-faded);
+  margin-bottom: 0.5rem;
+  height: fit-content;
+}
+
+.slide-pic-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.slide-pic-container-left {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: -100%;
+}
+
+.slide-pic-container-right {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100%;
+}
+
+.slide-pic {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.slide-control-panel {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  color: var(--hero-reg);
+  z-index: 100;
+}
+
+.slide-control-panel .material-symbols-outlined {
+  cursor: pointer;
+  user-select: none;
 }
