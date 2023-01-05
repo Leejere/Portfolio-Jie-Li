@@ -2,6 +2,10 @@ import { htmlToElement } from "./util-html-to-el.js";
 
 // First add a framework
 const slideshowContainer = document.querySelector('.slideshow-container');
+const numSlides = Number(slideshowContainer.classList[0].substring(4));
+
+const mainSection = document.querySelector('.main');
+const projectName = mainSection.title;
 
 const slidesFramework = htmlToElement(`
   <div class="slide-container">
@@ -14,20 +18,27 @@ const controlPanelFramework = htmlToElement(`
   <div class="slide-control-panel">
     <span class="material-symbols-outlined" id="left-arrow">arrow_back_ios</span>
     <span class="slide-number" id="slide-number">1</span>
+    <span>/ ${numSlides}</span>
     <span class="material-symbols-outlined" id="right-arrow">arrow_forward_ios</span>
   </div>
 `);
-slideshowContainer.append(slidesFramework);
+
+// Add the control panel
 slideshowContainer.append(controlPanelFramework);
 
-// First add in the images
+// Add the slideshow container
+slideshowContainer.append(slidesFramework);
+
+
+/**
+ * Three slide containers:
+ * "this": central, showing currently
+ * "left" and "right": alongside "this" in the overflow of `slideshowContainer`
+ */
 const leftSlideContainer = document.querySelector('#slide-pic-container-left');
 const thisSlideContainer = document.querySelector('#slide-pic-container-this');
 const rightSlideContainer = document.querySelector('#slide-pic-container-right');
-const numSlides = Number(slideshowContainer.classList[0].substring(4));
 
-const mainSection = document.querySelector('.main');
-const projectName = mainSection.title;
 
 /**
  * Gets paths of an image
@@ -36,7 +47,12 @@ const projectName = mainSection.title;
  * @returns
  */
 function getImagePath(projectName, number) {
-  const numberString = number < 10 ? '0' + String(number) : String(number);
+  let numberString;
+  if (numSlides >= 10) {
+    numberString = number < 10 ? '0' + String(number) : String(number);
+  } else {
+    numberString = String(number);
+  }
   return `../assets/projects/${projectName}/slides/slideshow_Page_${numberString}.jpg`;
 }
 
@@ -94,7 +110,10 @@ function resetSlidesPosition(thisSlideIndex, leftSlideIndex, rightSlideIndex) {
 const slideNumberContainer = document.querySelector('#slide-number');
 
 /**
- *
+ * Slide to the left or right while changing the number
+ * Two steps:
+ * 1. do a sliding: "this" container to left/right, while "right" or "left" container to middle
+ * 2. swap: renew slides to fit the three containers. Temporarily disable transition properties here
  * @param {String} direction either left or right
  */
 function slideLeftOrRight(direction) {

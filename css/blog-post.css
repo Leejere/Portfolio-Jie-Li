@@ -158,7 +158,7 @@ md-block ul {
   overflow: hidden;
   border-radius: 1rem;
   border: 1px solid var(--hero-faded);
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   height: fit-content;
 }
 
@@ -203,4 +203,17 @@ md-block ul {
 .slide-control-panel .material-symbols-outlined {
   cursor: pointer;
   user-select: none;
+  color: var(--hero-faded);
+}
+
+.slide-control-panel .material-symbols-outlined:hover {
+  font-weight: 900;
+  color: var(--hero-reg);
+}
+
+.slide-number {
+  width: 0.75rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
 }
