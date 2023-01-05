@@ -1,11 +1,30 @@
 import { htmlToElement } from "./util-html-to-el.js";
 
+// First add a framework
+const slideshowContainer = document.querySelector('.slideshow-container');
+
+const slidesFramework = htmlToElement(`
+  <div class="slide-container">
+    <div class="slide-pic-container slide-pic-container-this" id="slide-pic-container-this"></div>
+    <div class="slide-pic-container slide-pic-container-left" id="slide-pic-container-left"></div>
+    <div class="slide-pic-container slide-pic-container-right" id="slide-pic-container-right"></div>
+  </div>
+`);
+const controlPanelFramework = htmlToElement(`
+  <div class="slide-control-panel">
+    <span class="material-symbols-outlined" id="left-arrow">arrow_back_ios</span>
+    <span class="slide-number" id="slide-number">1</span>
+    <span class="material-symbols-outlined" id="right-arrow">arrow_forward_ios</span>
+  </div>
+`);
+slideshowContainer.append(slidesFramework);
+slideshowContainer.append(controlPanelFramework);
+
 // First add in the images
 const leftSlideContainer = document.querySelector('#slide-pic-container-left');
 const thisSlideContainer = document.querySelector('#slide-pic-container-this');
 const rightSlideContainer = document.querySelector('#slide-pic-container-right');
-const slideContainer = document.querySelector('.slide-container');
-const numSlides = Number(slideContainer.classList[0].substring(4));
+const numSlides = Number(slideshowContainer.classList[0].substring(4));
 
 const mainSection = document.querySelector('.main');
 const projectName = mainSection.title;
@@ -95,7 +114,7 @@ function slideLeftOrRight(direction) {
   }
 
     // Update number
-    slideNumberContainer.innerHTML = thisSlideIndex;
+    slideNumberContainer.innerHTML = thisSlideIndex + 1;
 
   // Then do a reset, prepare for the next sliding
   const leftSlideIndex = findLeftSlideIndex(thisSlideIndex);
@@ -112,9 +131,9 @@ const rightArrow = document.querySelector('#right-arrow');
 
 
 leftArrow.addEventListener('click', () => {
-  slideLeftOrRight('left');
+  slideLeftOrRight('right');
 });
 
 rightArrow.addEventListener('click', () => {
-  slideLeftOrRight('right');
+  slideLeftOrRight('left');
 });
