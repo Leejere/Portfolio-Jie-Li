@@ -90,8 +90,18 @@ export const cities = {
  * @returns map mapbox://styles/li-jie-fj/clcbeyrmt005015qsz4ikai6a
  */
 function initMapBase(viewportWidth) {
-  let zoomLevel;
+  let zoomLevel; // Also the min zoom
   let markerRadius;
+
+  // Setting max bounds
+  const bottomLeftCorner = L.latLng(-70, 60 - 360);
+  const topRightCorner = L.latLng(80, -50);
+
+  const maxBounds = L.latLngBounds(
+    bottomLeftCorner,
+    topRightCorner,
+  );
+
   if (viewportWidth <= 530) {
     zoomLevel = 1;
     markerRadius = 4;
@@ -104,10 +114,12 @@ function initMapBase(viewportWidth) {
   }
 
   const map = L.map('map', {
-    maxZoom: 15, preferCanvas: true, minZoom: 1,
+    maxZoom: 15, preferCanvas: true, minZoom: zoomLevel,
     zoomControl: false,
     tap: false, // Prevent firing two onclick events at once
-  }).setView([0, 0], zoomLevel);
+  })
+  .setView([0, 0], zoomLevel)
+  .setMaxBounds(maxBounds);
 
   // MapBox credentials
   const mapboxAccount = 'li-jie-fj';
@@ -120,7 +132,7 @@ function initMapBase(viewportWidth) {
   // Add tile layer
   L.tileLayer(tileLayerUrl, {
       maxZoom: 15,
-      minZoom: 1,
+      minZoom: zoomLevel,
       attribution: attributionHTML,
   }).addTo(map);
 
