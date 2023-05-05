@@ -2,11 +2,11 @@ import { htmlToElement } from "./util-html-to-el.js";
 import { projects } from "./project-list.js";
 import { createLinkButtons } from "./sidebar.js";
 
-const mainSection = document.querySelector('.main');
-const blogSection = document.querySelector('.title-block');
+const mainSection = document.querySelector(".main");
+const blogSection = document.querySelector(".title-block");
 const projectName = mainSection.title;
 
-const useGifAsTitleImg = ['mobile philly'];
+const useGifAsTitleImg = ["mobile philly"];
 
 /**
  * Makes title image HTML
@@ -14,7 +14,9 @@ const useGifAsTitleImg = ['mobile philly'];
  * @returns Element
  */
 function makeTitleImage(projectName) {
-  const titlePicFile = useGifAsTitleImg.includes(projectName) ? `title-img.gif` : `title-img.png`;
+  const titlePicFile = useGifAsTitleImg.includes(projectName)
+    ? `title-img.gif`
+    : `title-img.png`;
   const titleImageHtml = htmlToElement(`
     <section class="title-img-container">
       <img class="title-img" alt="${projectName} title image" src="../assets/projects/${projectName}/${titlePicFile}">
@@ -30,7 +32,7 @@ function makeTitleImage(projectName) {
  */
 function makeTitleBlock(projectName) {
   // Info for this project
-  const thisProject = (projects.filter(item => item.name === projectName))[0];
+  const thisProject = projects.filter((item) => item.name === projectName)[0];
   const titleBlockHtml = htmlToElement(`
     <div class="title-block">
       <h1 class="blog-title">${projectName}</h1>
@@ -51,7 +53,12 @@ function makeTitleBlock(projectName) {
     </div>
   `);
 
-  const buttons = createLinkButtons(thisProject.mainLink, thisProject.githubLink, thisProject.appLink);
+  const buttons = createLinkButtons(
+    thisProject.mainLink,
+    thisProject.githubLink,
+    thisProject.appLink,
+    thisProject.markdownLink
+  );
   titleBlockHtml.append(buttons);
   return titleBlockHtml;
 }
