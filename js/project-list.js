@@ -26,6 +26,17 @@ export const projects = [
   },
   {
     type: "urban technology",
+    name: "covid in Healthville",
+    description: `Bunching destablizes buses' frequency and hurts trust in riders. This is a full-stack web-app making predictions of whether SEPTA buses will start to bunch at future stops, so that bus speeds can be fine-tuned to avoid bunching`,
+    year: 2023,
+    by: "Jie Li",
+    role: "Individual",
+    titleImageLink: `../assets/thumbnails/covid-in-healthville.png`,
+    mainLink: `../blog-posts/covid-in-healthville.html`,
+    appLink: `../assets/projects/covid in Healthville/netlogo.html`,
+  },
+  {
+    type: "urban technology",
     name: "mobile philly",
     description: `This project produces five blog posts about mobility and some other related topics, using Python's machine-learning and latest interactive visualiztion packages such as <code>altair</code> and <code>holoviz</code>`,
     year: 2022,
