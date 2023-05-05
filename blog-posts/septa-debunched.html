@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Viewport setup for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>SEPTA, debunched</title>
+    <!-- Title icon -->
+    <link rel="icon" href="../assets/title-logo.png" type="image/icon type" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/c4c24742fe.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google font icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <!-- Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <!-- Custom style sheets -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/blog-post.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+  </head>
+
+  <body>
+    <main class="main" id="main" title="SEPTA debunched">
+      <section class="gallery main-blog">
+        <section class="title-block"></section>
+        <md-block>
+          ## Why doing this project? <br />
+          Knowing when buses are coming, riders plan their trips without stress.
+          Unfortunately, disruptions occur and affect some buses more than
+          others, leading to bunching, where two buses arrive at a stop
+          consecutively, accompanied by subsequent gapping, where riders have to
+          wait a long time after the bunched buses left. This should not happen
+          too often to a reliable bus service.
+          <br />
+          ## What we did? <br />
+          We were fortunate to obtain data from SEPTA, Philadelphia's primary
+          trainsit provider and studied what causes bunching and what are the
+          measures to take, both long-term (infrastructure-wise) and short-term
+          (operation-wise). Read the
+          [markdown](https://leejere.github.io/otis-corridor). Yihong Hu was the
+          primary author of the markdown. <br />
+          ## What is the app? <br />
+          I was the primary author of the app, a proof-of-concept of the
+          operational approach, whereby we predict bunching on the fly (up to 20
+          stops beforehand) to fine-tune the speeds of the buses to prevent
+          before it happens. Visit the app
+          [here](https://leejere.github.io/debunch-septa-app/). <br />
+          Using the app, the user can select a route, direction, and a
+          particular bus trip using real-time map display. Then, the user can
+          view the prediction results on the panel. <br />
+          <br />
+          <img
+            src="../assets/projects/SEPTA debunched/architecture-diagram.png"
+            alt="app architecture"
+            height="400"
+            style="margin-left: auto; margin-right: auto; display: block"
+          />
+        </md-block>
+        <footer></footer>
+      </section>
+    </main>
+
+    <nav class="sidebar" id="sidebar">
+      <!-- Toggle -->
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <span class="material-symbols-outlined" title="Collapse sidebar">
+          menu_open
+        </span>
+      </div>
+    </nav>
+
+    <script type="module" src="../js/blog-post.js"></script>
+    <script type="module" src="../js/sidebar.js"></script>
+    <!-- MD blocks -->
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  </body>
+</html>
