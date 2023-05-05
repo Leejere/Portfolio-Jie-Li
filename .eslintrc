@@ -18,7 +18,6 @@
   },
   "rules": {
     "camelcase": ["error"],
-    "comma-dangle": ["error", "always-multiline"],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "no-trailing-spaces": ["error"],
     "no-use-before-define": ["error", { "allowNamedExports": true }],
