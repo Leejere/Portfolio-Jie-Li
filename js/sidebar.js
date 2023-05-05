@@ -3,48 +3,51 @@
  * but not so on smaller screens
  */
 
-import { htmlToElement } from './util-html-to-el.js';
-import { projects } from './project-list.js';
+import { htmlToElement } from "./util-html-to-el.js";
+import { projects } from "./project-list.js";
 
 /**
  * Makes buttons: linking to more info, github, or web app
  * @param {String} mainLink
  * @param {String} githubLink
  * @param {String} appLink
+ * @param {String} markdownLink
  * @returns Element
  */
-function createLinkButtons(mainLink, githubLink, appLink) {
+function createLinkButtons(mainLink, githubLink, appLink, markdownLink) {
   const mainButton = `<button><a class="button-link" href="${mainLink}"><i class="fas fa-eye"></i> view</a></button>`;
-  let githubButton = ``;
-  let appButton = ``;
-  if (githubLink) {
-    githubButton = `<button><a class="button-link" href="${githubLink}"><i class="fab fa-github"></i> GitHub</a></button>`;
-  }
-  if (appLink) {
-    appButton = `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> product</a></button>`;
-  }
+  const githubButton = githubLink
+    ? `<button><a class="button-link" href="${githubLink}"><i class="fab fa-github"></i> GitHub</a></button>`
+    : ``;
+  const appButton = appLink
+    ? `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> product</a></button>`
+    : ``;
+  const markdownButton = markdownLink
+    ? `<button><a class="button-link" href="${appLink}"><i class="fab fa-markdown"></i> markdown</a></button>`
+    : ``;
 
   return htmlToElement(`
     <div class="project-buttons-group">
       ${mainButton}
       ${githubButton}
       ${appButton}
+      ${markdownButton}
     </div>
   `);
 }
 
 let isSmallScreen = false;
-const mainSection = document.querySelector('#main');
+const mainSection = document.querySelector("#main");
 
 function makeMainFullWidth(mainSection) {
-  if (!mainSection.classList.contains('main-full-width')) {
-    mainSection.classList.add('main-full-width');
+  if (!mainSection.classList.contains("main-full-width")) {
+    mainSection.classList.add("main-full-width");
   }
 }
 
 function makeMainNotFullWidth(mainSection) {
-  if (mainSection.classList.contains('main-full-width')) {
-    mainSection.classList.remove('main-full-width');
+  if (mainSection.classList.contains("main-full-width")) {
+    mainSection.classList.remove("main-full-width");
   }
 }
 
@@ -54,15 +57,15 @@ function makeMainNotFullWidth(mainSection) {
 
 let sidebarIsOpen = true;
 
-const sidebarToggle = document.querySelector('#sidebar-toggle');
-const sidebarSection = document.querySelector('#sidebar');
+const sidebarToggle = document.querySelector("#sidebar-toggle");
+const sidebarSection = document.querySelector("#sidebar");
 
 const toggleToOpenHTML = `<span class="material-symbols-outlined" title="Open sidebar">menu</span>`;
 const toggleToCloseHTML = `<span class="material-symbols-outlined" title="Collapse sidebar">menu_open</span>`;
 
 function closeSidebar(sidebarSection) {
-  if (!sidebarSection.classList.contains('sidebar-hidden')) {
-    sidebarSection.classList.add('sidebar-hidden');
+  if (!sidebarSection.classList.contains("sidebar-hidden")) {
+    sidebarSection.classList.add("sidebar-hidden");
   }
   sidebarIsOpen = false;
 
@@ -74,8 +77,8 @@ function closeSidebar(sidebarSection) {
 }
 
 function openSidebar(sidebarSection) {
-  if (sidebarSection.classList.contains('sidebar-hidden')) {
-    sidebarSection.classList.remove('sidebar-hidden');
+  if (sidebarSection.classList.contains("sidebar-hidden")) {
+    sidebarSection.classList.remove("sidebar-hidden");
   }
   sidebarIsOpen = true;
   // Change toggle icon
@@ -88,7 +91,7 @@ function openSidebar(sidebarSection) {
 }
 
 // Open or close sidebar on toggle click
-sidebarToggle.addEventListener('click', () => {
+sidebarToggle.addEventListener("click", () => {
   if (sidebarIsOpen) {
     closeSidebar(sidebarSection);
   } else {
@@ -99,7 +102,8 @@ sidebarToggle.addEventListener('click', () => {
 // Adjusts main width and decides whether to hide sidebar on page load
 function adjustLayoutOnLoad(threshold) {
   const viewportWidth = document.documentElement.clientWidth;
-  if (viewportWidth < threshold) { // If on smaller screen
+  if (viewportWidth < threshold) {
+    // If on smaller screen
     isSmallScreen = true;
     makeMainFullWidth(mainSection);
     // Hide sidebar
@@ -108,7 +112,7 @@ function adjustLayoutOnLoad(threshold) {
 }
 
 function adjustLayoutOnResize(threshold) {
-  visualViewport.addEventListener('resize', ( ) => {
+  visualViewport.addEventListener("resize", () => {
     const currentViewportWidth = document.documentElement.clientWidth;
     if (currentViewportWidth < threshold) {
       isSmallScreen = true;
@@ -156,7 +160,11 @@ function makeSidebarMenuCollapsible(project) {
     </div>
   `);
   // Button links to places
-  const buttons = createLinkButtons(project.mainLink, project.githubLink, project.appLink);
+  const buttons = createLinkButtons(
+    project.mainLink,
+    project.githubLink,
+    project.appLink
+  );
   sidebarProjectCollapsible.append(buttons);
   return sidebarProjectCollapsible;
 }
@@ -168,7 +176,7 @@ function makeSidebarMenuCollapsible(project) {
  * @returns Element
  */
 function addSidebarMenuGroup(category, dictionary, hrefId) {
-  const subDictionary = dictionary.filter(item => item.type === category);
+  const subDictionary = dictionary.filter((item) => item.type === category);
   const sidebarMenuContent = htmlToElement(`
     <div class="sidebar-menu">
       <h1 class="sidebar-menu-title">
@@ -190,10 +198,18 @@ function addSidebarMenuGroup(category, dictionary, hrefId) {
 }
 
 // Add content of projects in the two categories
-const techMenuContent = addSidebarMenuGroup('urban technology', projects, 'technology-group');
+const techMenuContent = addSidebarMenuGroup(
+  "urban technology",
+  projects,
+  "technology-group"
+);
 sidebarContent.append(techMenuContent);
 
-const designMenuContent = addSidebarMenuGroup('planning & design', projects, 'design-group');
+const designMenuContent = addSidebarMenuGroup(
+  "planning & design",
+  projects,
+  "design-group"
+);
 sidebarContent.append(designMenuContent);
 
 // Add 'about me'
@@ -223,28 +239,32 @@ sidebarSection.prepend(sidebarContent);
  */
 
 function closeAllCollapsibles() {
-  const allCollapsibles = document.querySelectorAll('.sidebar-menu-collapsible');
+  const allCollapsibles = document.querySelectorAll(
+    ".sidebar-menu-collapsible"
+  );
   for (const collapsible of allCollapsibles) {
-    collapsible.style.display = 'none';
+    collapsible.style.display = "none";
 
-    collapsible.previousElementSibling.classList.remove('sidebar-menu-item-selected');
+    collapsible.previousElementSibling.classList.remove(
+      "sidebar-menu-item-selected"
+    );
   }
 }
 
-const collapsibleTitlesEls = document.querySelectorAll('.sidebar-menu-item');
+const collapsibleTitlesEls = document.querySelectorAll(".sidebar-menu-item");
 // Add event listners to each collapsible set
 for (const collapisbleTitleEl of collapsibleTitlesEls) {
   collapisbleTitleEl.isOpen = false;
 
   const collapsibleEl = collapisbleTitleEl.nextElementSibling;
-  collapisbleTitleEl.addEventListener('click', () => {
+  collapisbleTitleEl.addEventListener("click", () => {
     // Close all collapsibles no matter what
     closeAllCollapsibles();
     // Open this one if currently not open, and make font bigger
     if (collapisbleTitleEl.isOpen === false) {
-      collapsibleEl.style.display = 'flex';
+      collapsibleEl.style.display = "flex";
       collapisbleTitleEl.isOpen = true;
-      collapisbleTitleEl.classList.add('sidebar-menu-item-selected');
+      collapisbleTitleEl.classList.add("sidebar-menu-item-selected");
     } else {
       collapisbleTitleEl.isOpen = false;
     }
@@ -252,10 +272,10 @@ for (const collapisbleTitleEl of collapsibleTitlesEls) {
 }
 
 // Close sidebar when clicked on title links
-const sidebarGroupTitlesEls = document.querySelectorAll('.sidebar-menu-title');
+const sidebarGroupTitlesEls = document.querySelectorAll(".sidebar-menu-title");
 
 for (const sidebarGroupTitle of sidebarGroupTitlesEls) {
-  sidebarGroupTitle.addEventListener('click', () => {
+  sidebarGroupTitle.addEventListener("click", () => {
     if (isSmallScreen) {
       closeSidebar(sidebarSection);
     }
@@ -266,12 +286,10 @@ for (const sidebarGroupTitle of sidebarGroupTitlesEls) {
  * Add footer
  */
 
-const footer = document.querySelector('footer');
+const footer = document.querySelector("footer");
 footer.innerHTML = `
   <span>website by Jie Li</span>
   <span>@Philadelphia, 2023</span>
 `;
 
-export {
-  createLinkButtons,
-};
+export { createLinkButtons };

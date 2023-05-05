@@ -1,6 +1,6 @@
-import{ projects }from './project-list.js';
-import { htmlToElement } from './util-html-to-el.js';
-import { createLinkButtons } from './sidebar.js';
+import { projects } from "./project-list.js";
+import { htmlToElement } from "./util-html-to-el.js";
+import { createLinkButtons } from "./sidebar.js";
 
 /**
  * Makes element of each project block, including defining img, title, description, and buttons
@@ -14,6 +14,7 @@ function makeProjectBlock(project) {
   const mainLink = project.mainLink;
   const githubLink = project.githubLink;
   const appLink = project.appLink;
+  const markdownLink = project.markdownLink;
 
   let titleImageHtml;
 
@@ -33,19 +34,24 @@ function makeProjectBlock(project) {
     </div>
   `);
 
-  const buttons = createLinkButtons(mainLink, githubLink, appLink);
+  const buttons = createLinkButtons(
+    mainLink,
+    githubLink,
+    appLink,
+    markdownLink
+  );
   html.append(buttons);
   return html;
 }
 
 function addProjectBlocks(sectionType, sectionId) {
   const section = document.querySelector(`#${sectionId}`);
-  const sectionProjects = projects.filter(item => item.type === sectionType);
+  const sectionProjects = projects.filter((item) => item.type === sectionType);
 
   for (const project of sectionProjects) {
     section.append(makeProjectBlock(project));
   }
 }
 
-addProjectBlocks('urban technology', 'technology-blocks-group');
-addProjectBlocks('planning & design', 'design-blocks-group');
+addProjectBlocks("urban technology", "technology-blocks-group");
+addProjectBlocks("planning & design", "design-blocks-group");
