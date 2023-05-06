@@ -48,7 +48,7 @@
       <section class="gallery main-blog">
         <section class="title-block"></section>
         <md-block>
-          ## WHAT IS THIS MODEL? <br />
+          ## what is the model? <br />
 
           This model simulates the spread of an infectious virus in a simple
           town. The model can simulate residents' going to work, school, and
@@ -58,52 +58,51 @@
           people's behavior, and the virus's characteristics, the model can
           simulate the spread of the virus and output the number of infected,
           recovered, and dead people in the process. [Play with the tool in
-          Netlogo](../assets/projects/covid%20in%20Healthville/netlogo.html)<br />
+          Netlogo](../assets/projects/covid%20in%20Healthville/netlogo.html).<br />
 
           Agent-based models like this are suitable for a use case like this for
           the following reasons:<br /><br />
 
-          - Ability to capture the complexity of human behavior and
-          interactions. Disease transmission is a complex process that involves
-          many factors, such as demography, behavior, and virology. Compared to
-          top-down models, agent-based models are able to capture these factors
-          and simulate the interactions between them.<br />
+          - **Ability to capture the complexity of human behavior and
+          interactions**. Disease transmission is a complex process that
+          involves many factors, such as demography, behavior, and virology.
+          Compared to top-down models, agent-based models are able to capture
+          these factors and simulate the interactions between them.<br />
 
-          - Customizability for testing out different scenarios. Agent-based
+          - **Customizability for testing out different scenarios**. Agent-based
           models help us understand or anticipate disease transmission scenarios
           under different demographical, behavioral, and virological settings.
           Such understanding may otherwise be difficult to obtain from real-life
           data.<br />
 
           Users should be cautioned that agent-based models are not guaranteed
-          to be true representations of reality. They are only models, and they
-          are only as good as the assumptions and parameters that go into them.
-          However, two points may be made to address this concern:<br />
+          to be true representations of reality. However, two points may be made
+          to address this concern:<br />
 
-          - Agent-based models like this are highly adaptible. Once we have set
-          up a framework like this one, we can adjust the model assumptions to
-          fit the real-life situation.<br />
-          - Agent-based models like this can also be validated against real-life
-          data. After this validation, we are more confident in the validity of
-          the model and better trust the simulation result for scenarios that
-          deviate from the real-life situation.<br />
+          - Agent-based models like this are highly **adaptible**. Once we have
+          set up a framework like this one, we can adjust the model assumptions
+          to fit the real-life situation.<br />
+          - Agent-based models like this can also be **validated against
+          real-life data**. After this validation, we are more confident in the
+          validity of the model and better trust the simulation result for
+          scenarios that deviate from the real-life situation.<br />
 
-          ## HOW THE MODEL WORKS<br />
+          ## how the model works<br />
 
-          ### The Town<br />
+          ### the town<br />
 
           The "town" is made of a 64x64 grid of patches or "cells", and each
           cell represents a land-use type. There are four land-use types:<br />
 
-          - Schools. The town as a number of schools (controlled by the user)
-          randomly placed within the town.<br />
-          - Workplaces. Workplaces are where some residents go to work. The
+          - **Schools**. The town as a number of schools (controlled by the
+          user) randomly placed within the town.<br />
+          - **Workplaces**. Workplaces are where some residents go to work. The
           workplaces are more likely to be placed near *schools* and other *work
           centers* (the number of which controlled by the user).<br />
-          - Homes. Homes are where residents live and the density of which is
-          controlled by the user.<br />
+          - **Homes**. Homes are where residents live and the density of which
+          is controlled by the user.<br />
 
-          ### Residents and Their Routines<br />
+          ### residents and their routines<br />
 
           Each household corresponds to a home. Within each household, the model
           assumes that there are three types of residents: students, workers,
@@ -111,10 +110,10 @@
           control the sizes of the households in terms of three types of
           residents.<br />
 
-          - Students go to school every day. After school, they may or may not
-          go to another location close to their school or home.<br />
-          - Workers go to work every day. After work, they may or may not go to
-          another location to perform a side routine close to their work or
+          - **Students go to school** every day. After school, they may or may
+          not go to another location close to their school or home.<br />
+          - **Workers go to work** every day. After work, they may or may not go
+          to another location to perform a side routine close to their work or
           home.<br />
           - Non-workers (primarily pensioners) do not go to school or work, but
           they may or may not go to some location to perform a side routine
@@ -132,7 +131,7 @@
           symptomatic, regardless of whether their household members are
           symptomatic.<br />
 
-          ### Infections<br />
+          ### infections<br />
 
           Infections happen whenever different residents are in the same cell
           during their routines and in-household. In public places, the
@@ -160,7 +159,7 @@
           public places. The effectiveness of masks is determined by the
           user.<br />
 
-          ### Disease Progression<br />
+          ### disease progression<br />
 
           At the start of the circle, everyone is **"susceptible"**. If a
           resident becomes infected, she enters her "incubation period" or the
@@ -187,7 +186,7 @@
           set by the user. The decrease rate of infection of one-time exposures
           are calculated based on `how-immune` and `immune-days`.<br />
 
-          ## HOW TO USE IT<br />
+          ## how to use it<br />
 
           To use the model, the user may choose to tune each input on the user
           interface, setting params to set up the town, make the demographics,
@@ -209,7 +208,7 @@
           the daily new cases, new deaths, and active severe cases by day. These
           metrics are what people are most interested in during a pandemic.<br />
 
-          ## THINGS TO NOTICE<br />
+          ## things noticed<br />
 
           We noticed a few emergent behaviors in the model:<br />
 
@@ -235,7 +234,7 @@
           but we will observe cycles of infection peaks and valleys, although
           later peaks are usually slightly less acute than their predecessor.<br />
 
-          ## THINGS TO TRY<br />
+          ## things to try<br />
 
           Users are encouraged to test out different demographical, behavioral,
           and virological settings to see how they affect the spread of the
@@ -251,8 +250,9 @@
           and forth between model validation and extension, until they are
           satisfied with the model's ability to simulate the real-world spread
           of the disease. Then, the model becomes a useful tool to simulate
-          credible scenarios and for policy makers to make informed decisions. </md-block
-        ><br />
+          credible scenarios and for policy makers to make informed
+          decisions.<br />
+        </md-block>
 
         <footer></footer>
       </section>

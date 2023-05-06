@@ -27,7 +27,7 @@ export const projects = [
   {
     type: "urban technology",
     name: "covid in Healthville",
-    description: `Bunching destablizes buses' frequency and hurts trust in riders. This is a full-stack web-app making predictions of whether SEPTA buses will start to bunch at future stops, so that bus speeds can be fine-tuned to avoid bunching`,
+    description: `An agent-based model simulating an infectious disease (COVID, for example) in a small town, with the ability to set parameters regarding the town's demographics, people's routines, and the disease's virological features.`,
     year: 2023,
     by: "Jie Li",
     role: "Individual",
