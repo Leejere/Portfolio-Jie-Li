@@ -23,7 +23,7 @@ function createLinkButtons(mainLink, githubLink, appLink, markdownLink) {
     ? `<button><a class="button-link" href="${appLink}"><i class="fas fa-desktop"></i> product</a></button>`
     : ``;
   const markdownButton = markdownLink
-    ? `<button><a class="button-link" href="${appLink}"><i class="fab fa-markdown"></i> markdown</a></button>`
+    ? `<button><a class="button-link" href="${markdownLink}"><i class="fab fa-markdown"></i> markdown</a></button>`
     : ``;
 
   return htmlToElement(`
@@ -128,7 +128,7 @@ function adjustLayoutOnResize(threshold) {
   });
 }
 
-const threshold = 1250;
+const threshold = 1150;
 adjustLayoutOnResize(threshold);
 adjustLayoutOnLoad(threshold);
 
