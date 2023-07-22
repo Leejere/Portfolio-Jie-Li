@@ -140,8 +140,7 @@ adjustLayoutOnLoad(threshold);
 const sidebarContent = htmlToElement(`
   <div class="sidebar-main" id="sidebar-main">
     <div class="sidebar-title">
-      Urban planner gearing into the world of urban technologists.
-      Coffee addict who wants to study linguistics
+      Geospatial Data Scientist, Planner, Designer, and Developer
     </div>
     <div class="sidebar-menu">
       <h1 class="sidebar-menu-title">
